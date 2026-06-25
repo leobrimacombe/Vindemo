@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-cream-100 text-ink font-sans antialiased;
+  }
+
+  /* Titres : serif éditoriale */
+  h1,
+  h2,
+  h3 {
+    @apply font-serif;
+  }
+
+  /* Respecte les préférences de réduction de mouvement */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+
+  /* Focus visible accessible et discret */
+  :focus-visible {
+    outline: 2px solid theme('colors.copper.DEFAULT');
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: theme('colors.bordeaux.DEFAULT');
+    color: theme('colors.cream.50');
+  }
+}
+
+@layer components {
+  /* Conteneur de section avec respiration généreuse */
+  .section-shell {
+    @apply mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12;
+  }
+
+  /* Sur-titre en petites capitales espacées */
+  .eyebrow {
+    @apply font-sans text-xs font-medium uppercase tracking-widest text-copper;
+  }
+
+  /* Lien de bouton primaire */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-bordeaux px-7 py-3.5
+           font-sans text-sm font-medium tracking-wide text-cream-50 transition-all duration-500 ease-smooth
+           hover:bg-bordeaux-deep hover:shadow-lg hover:shadow-bordeaux/20 focus-visible:outline-cream-50;
+  }
+
+  /* Bouton secondaire (outline) */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-current px-7 py-3.5
+           font-sans text-sm font-medium tracking-wide transition-all duration-500 ease-smooth
+           hover:bg-current;
+  }
+
+  /* Filet décoratif fin sous les titres */
+  .rule {
+    @apply h-px w-16 bg-copper/60;
+  }
+}
+
+@layer utilities {
+  /* Apparition au scroll : état initial puis classe .is-visible ajoutée par l'observer */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
