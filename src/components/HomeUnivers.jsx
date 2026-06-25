@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useLang } from '../i18n/LanguageContext.jsx'
 import { domaine } from '../data/domaine.js'
 import { useReveal } from '../hooks/useReveal.js'
+import { onImgError } from '../utils/imageFallback.js'
 
 /**
  * HomeUnivers — section d'accueil : courte intro + trois cartes "univers"
@@ -23,6 +24,7 @@ function UniversCard({ item, index }) {
           src={item.image}
           alt={t(item.imageAlt)}
           loading="lazy"
+          onError={onImgError('/placeholder.svg')}
           className="h-full w-full object-cover transition-transform duration-[1.1s] ease-smooth group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/40 to-transparent opacity-60" />

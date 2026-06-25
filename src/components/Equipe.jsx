@@ -1,6 +1,7 @@
 import { useLang } from '../i18n/LanguageContext.jsx'
 import { domaine } from '../data/domaine.js'
 import { useReveal } from '../hooks/useReveal.js'
+import { onImgError } from '../utils/imageFallback.js'
 import SectionHeading from './SectionHeading.jsx'
 
 /** Carte d'un membre de la famille / de l'équipe. */
@@ -18,6 +19,7 @@ function MembreCard({ membre, index }) {
           src={membre.photo}
           alt={`${membre.nom} — ${t(membre.role)}`}
           loading="lazy"
+          onError={onImgError('/placeholder.svg')}
           className="aspect-[4/5] w-full object-cover transition-transform duration-[1.1s] ease-smooth group-hover:scale-105"
         />
       </div>

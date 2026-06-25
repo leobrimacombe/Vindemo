@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Visuel à venir — Domaine Vogel-Stein">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#efe6d4"/>
+      <stop offset="100%" stop-color="#e3d6bd"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="1000" fill="url(#bg)"/>
+  <!-- Motif feuille de vigne / grappe stylisée -->
+  <g transform="translate(500 430)" fill="none" stroke="#b07a3c" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity="0.7">
+    <path d="M0,-120 C0,-40 -70,-30 -70,40 a70,70 0 0 0 140,0 C70,-30 0,-40 0,-120 Z"/>
+    <line x1="0" y1="40" x2="0" y2="120"/>
+  </g>
+  <g transform="translate(500 600)" fill="#b07a3c" opacity="0.7">
+    <circle cx="-46" cy="0" r="26"/>
+    <circle cx="46" cy="0" r="26"/>
+    <circle cx="0" cy="44" r="26"/>
+  </g>
+  <text x="500" y="780" text-anchor="middle" font-family="Georgia, serif" font-size="42" fill="#5a1a22" opacity="0.85">Domaine Vogel-Stein</text>
+  <text x="500" y="832" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" letter-spacing="4" fill="#b07a3c" opacity="0.8">RIQUEWIHR · ALSACE</text>
+</svg>

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useLang } from '../i18n/LanguageContext.jsx'
 import { domaine } from '../data/domaine.js'
+import { onImgError } from '../utils/imageFallback.js'
 
 /**
  * Hero — plein écran, image vignoble en fond avec léger zoom lent,
@@ -20,6 +21,7 @@ export default function Hero() {
           className="h-full w-full animate-slow-zoom object-cover"
           loading="eager"
           fetchpriority="high"
+          onError={onImgError()}
         />
         {/* Voiles dégradés pour la lisibilité du texte */}
         <div className="absolute inset-0 bg-gradient-to-b from-ink/55 via-ink/30 to-ink/70" />

@@ -1,6 +1,7 @@
 import { useLang } from '../i18n/LanguageContext.jsx'
 import { domaine } from '../data/domaine.js'
 import { useReveal } from '../hooks/useReveal.js'
+import { onImgError } from '../utils/imageFallback.js'
 import SectionHeading from './SectionHeading.jsx'
 
 /**
@@ -57,6 +58,7 @@ export default function Histoire() {
                 src={histoire.portrait}
                 alt={t(histoire.portraitAlt)}
                 loading="lazy"
+                onError={onImgError('/placeholder.svg')}
                 className="aspect-[4/5] w-full object-cover transition-transform duration-[1.2s] ease-smooth hover:scale-[1.04]"
               />
             </div>

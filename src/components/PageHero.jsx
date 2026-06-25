@@ -1,4 +1,5 @@
 import { useLang } from '../i18n/LanguageContext.jsx'
+import { onImgError } from '../utils/imageFallback.js'
 
 /**
  * PageHero — bannière d'en-tête des pages internes : image sombre plein
@@ -17,6 +18,7 @@ export default function PageHero({ eyebrow, title, subtitle, image, imageAlt }) 
           className="h-full w-full animate-slow-zoom object-cover"
           loading="eager"
           fetchpriority="high"
+          onError={onImgError()}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/45 to-ink/55" />
       </div>
