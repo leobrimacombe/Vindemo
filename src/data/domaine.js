@@ -39,15 +39,16 @@ export const domaine = {
   nav: [
     { to: '/le-domaine', label: { fr: 'Le domaine', de: 'Das Weingut', en: 'The Estate' } },
     { to: '/nos-cuvees', label: { fr: 'Nos cuvées', de: 'Unsere Weine', en: 'Our Wines' } },
+    { to: '/boutique', label: { fr: 'Boutique', de: 'Shop', en: 'Shop' } },
     { to: '/oenotourisme', label: { fr: 'Œnotourisme', de: 'Weintourismus', en: 'Wine Tourism' } },
     { to: '/contact', label: { fr: 'Accès & contact', de: 'Anfahrt & Kontakt', en: 'Visit & Contact' } },
   ],
 
   // ── Section 1 : Hero ─────────────────────────────────────────────────────
   hero: {
-    // Image plein écran (Unsplash — vignoble d'Alsace)
+    // Image plein écran (Unsplash — grappes de raisin au soleil dans le vignoble)
     image:
-      'https://images.unsplash.com/photo-1444858345149-8ce5f8b53b16?auto=format&fit=crop&w=2400&q=80',
+      'https://images.unsplash.com/photo-1537640538966-79f369143f8f?auto=format&fit=crop&w=2400&q=80',
     imageAlt: {
       fr: 'Rangées de vignes au lever du jour sur les coteaux d’Alsace',
       de: 'Weinreben im Morgenlicht an den Hängen des Elsass',
@@ -471,7 +472,7 @@ export const domaine = {
         en: 'In the heart of old Riquewihr, on the Wine Route.',
       },
       image:
-        'https://images.unsplash.com/photo-1597933534024-debb6018d8d6?auto=format&fit=crop&w=2000&q=80',
+        'https://images.unsplash.com/photo-1641492599677-eb904ad3dc75?auto=format&fit=crop&w=2000&q=80',
       imageAlt: {
         fr: 'Ruelle pavée et maisons à colombages de Riquewihr',
         de: 'Gepflasterte Gasse und Fachwerkhäuser in Riquewihr',
@@ -488,6 +489,189 @@ export const domaine = {
         en: 'Address, hours and directions to the Domaine Vogel-Stein cellar, 12 rue du Général de Gaulle, 68340 Riquewihr.',
       },
     },
+    '/boutique': {
+      eyebrow: { fr: 'La boutique', de: 'Der Shop', en: 'The shop' },
+      titre: { fr: 'Boutique', de: 'Shop', en: 'Shop' },
+      sous: {
+        fr: 'Nos cuvées livrées chez vous, directement du domaine.',
+        de: 'Unsere Weine zu Ihnen nach Hause geliefert, direkt vom Weingut.',
+        en: 'Our wines delivered to your door, straight from the estate.',
+      },
+      image:
+        'https://images.unsplash.com/photo-1568213816046-0ee1c42bd559?auto=format&fit=crop&w=2000&q=80',
+      imageAlt: {
+        fr: 'Verres de vin alignés sur un tonneau pour une dégustation',
+        de: 'Weingläser auf einem Fass zur Verkostung aufgereiht',
+        en: 'Wine glasses lined up on a barrel for a tasting',
+      },
+      seoTitle: {
+        fr: 'Boutique — Domaine Vogel-Stein',
+        de: 'Shop — Domaine Vogel-Stein',
+        en: 'Shop — Domaine Vogel-Stein',
+      },
+      seoDesc: {
+        fr: 'Commandez les vins du Domaine Vogel-Stein en ligne : Riesling, Gewurztraminer, Pinot Noir, Crémant d’Alsace. Livraison directe du domaine.',
+        de: 'Bestellen Sie die Weine des Weinguts Vogel-Stein online: Riesling, Gewurztraminer, Pinot Noir, Crémant d’Alsace. Direktlieferung vom Weingut.',
+        en: 'Order Domaine Vogel-Stein wines online: Riesling, Gewurztraminer, Pinot Noir, Crémant d’Alsace. Shipped directly from the estate.',
+      },
+    },
+  },
+
+  // ── Boutique e-commerce (Shopify headless via Storefront API) ────────────
+  // Cette section porte le contenu éditorial de la page Boutique, les libellés
+  // d'interface (multilingues) ET des produits de DÉMO servant de repli.
+  // Les VRAIS produits proviennent de Shopify (voir src/lib/shopify.js). Les
+  // `produitsDemo` ne s'affichent que si la boutique n'est pas configurée, est
+  // injoignable ou vide — pour qu'une présentation ne tombe jamais sur du vide.
+  boutique: {
+    eyebrow: { fr: 'La boutique', de: 'Der Shop', en: 'The shop' },
+    titre: { fr: 'Commander nos vins', de: 'Unsere Weine bestellen', en: 'Order our wines' },
+    intro: {
+      fr: 'Nos cuvées disponibles à la vente, livrées directement du domaine. Stocks et paiement sécurisé gérés en temps réel.',
+      de: 'Unsere zum Verkauf stehenden Weine, direkt vom Weingut geliefert. Bestände und sichere Zahlung in Echtzeit.',
+      en: 'Our wines available for purchase, shipped straight from the estate. Live stock and secure payment in real time.',
+    },
+    // Libellés d'interface (résolus via t() comme tout le reste du site)
+    ui: {
+      ajouter: { fr: 'Ajouter au panier', de: 'In den Warenkorb', en: 'Add to cart' },
+      ajoute: { fr: 'Ajouté ✓', de: 'Hinzugefügt ✓', en: 'Added ✓' },
+      epuise: { fr: 'Épuisé', de: 'Ausverkauft', en: 'Sold out' },
+      panier: { fr: 'Panier', de: 'Warenkorb', en: 'Cart' },
+      panierVide: { fr: 'Votre panier est vide.', de: 'Ihr Warenkorb ist leer.', en: 'Your cart is empty.' },
+      continuer: { fr: 'Découvrir la boutique', de: 'Zum Shop', en: 'Browse the shop' },
+      sousTotal: { fr: 'Sous-total', de: 'Zwischensumme', en: 'Subtotal' },
+      commander: { fr: 'Commander', de: 'Zur Kasse', en: 'Checkout' },
+      redirection: { fr: 'Redirection…', de: 'Weiterleitung…', en: 'Redirecting…' },
+      quantite: { fr: 'Quantité', de: 'Menge', en: 'Quantity' },
+      retirer: { fr: 'Retirer', de: 'Entfernen', en: 'Remove' },
+      fermer: { fr: 'Fermer', de: 'Schließen', en: 'Close' },
+      taxesNote: {
+        fr: 'Frais de port et taxes calculés au paiement.',
+        de: 'Versand und Steuern werden an der Kasse berechnet.',
+        en: 'Shipping and taxes calculated at checkout.',
+      },
+      // Affiché si l'on tente de commander des produits de démo (sans Shopify réel)
+      demoCheckout: {
+        fr: 'Mode démonstration : connectez une boutique Shopify pour activer le paiement réel.',
+        de: 'Demo-Modus: Verbinden Sie einen Shopify-Shop, um die echte Zahlung zu aktivieren.',
+        en: 'Demo mode: connect a Shopify store to enable real checkout.',
+      },
+      // Échec réseau au moment de créer le panier Shopify
+      checkoutErreur: {
+        fr: 'Le paiement est momentanément indisponible. Réessayez dans un instant.',
+        de: 'Die Zahlung ist vorübergehend nicht verfügbar. Bitte versuchen Sie es gleich erneut.',
+        en: 'Checkout is temporarily unavailable. Please try again in a moment.',
+      },
+      // Badge discret signalant que les produits affichés sont des exemples
+      modeDemo: { fr: 'Produits de démonstration', de: 'Demo-Produkte', en: 'Demo products' },
+      chargement: { fr: 'Chargement de la boutique…', de: 'Shop wird geladen…', en: 'Loading the shop…' },
+    },
+    // Produits de DÉMO — même forme que le modèle normalisé renvoyé par
+    // src/lib/shopify.js, à deux nuances près : title/description/tag/alt sont
+    // des objets {fr,de,en} (résolus par t()), et `variantId` est null car il
+    // n'existe aucun identifiant Shopify réel → checkout réel impossible en démo.
+    produitsDemo: [
+      {
+        id: 'demo-riesling',
+        variantId: null,
+        available: true,
+        tag: { fr: 'Riesling', de: 'Riesling', en: 'Riesling' },
+        price: { amount: '24.00', currency: 'EUR' },
+        title: {
+          fr: 'Riesling Grand Cru Schoenenbourg 2021',
+          de: 'Riesling Grand Cru Schoenenbourg 2021',
+          en: 'Riesling Grand Cru Schoenenbourg 2021',
+        },
+        description: {
+          fr: 'Citron confit, pierre à fusil et tension saline. La signature du domaine.',
+          de: 'Zitronenkonfit, Feuerstein und salzige Spannung. Die Signatur des Weinguts.',
+          en: 'Candied lemon, gunflint and saline tension. The estate’s signature.',
+        },
+        image: {
+          url: 'https://images.unsplash.com/photo-1474722883778-792e7990302f?auto=format&fit=crop&w=900&q=80',
+          alt: {
+            fr: 'Verre de vin blanc devant un rang de vigne',
+            de: 'Glas Weißwein vor einer Rebzeile',
+            en: 'Glass of white wine in front of a vine row',
+          },
+        },
+      },
+      {
+        id: 'demo-gewurztraminer',
+        variantId: null,
+        available: false, // en rupture → illustre le badge « Épuisé »
+        tag: { fr: 'Gewurztraminer', de: 'Gewurztraminer', en: 'Gewurztraminer' },
+        price: { amount: '32.00', currency: 'EUR' },
+        title: {
+          fr: 'Gewurztraminer Vendanges Tardives 2019',
+          de: 'Gewurztraminer Vendanges Tardives 2019',
+          en: 'Gewurztraminer Late Harvest 2019',
+        },
+        description: {
+          fr: 'Rose, litchi et gingembre confit. Une douceur ample tenue par une fraîcheur épicée.',
+          de: 'Rose, Litschi und kandierter Ingwer. Üppige Süße mit würziger Frische.',
+          en: 'Rose, lychee and candied ginger. Generous sweetness held by spiced freshness.',
+        },
+        image: {
+          url: 'https://images.unsplash.com/photo-1528823872057-9c018a7a7553?auto=format&fit=crop&w=900&q=80',
+          alt: {
+            fr: 'Verres de vin blanc levés lors d’une dégustation',
+            de: 'Erhobene Weißweingläser bei einer Verkostung',
+            en: 'Glasses of white wine raised during a tasting',
+          },
+        },
+      },
+      {
+        id: 'demo-pinot-noir',
+        variantId: null,
+        available: true,
+        tag: { fr: 'Pinot Noir', de: 'Pinot Noir', en: 'Pinot Noir' },
+        price: { amount: '19.50', currency: 'EUR' },
+        title: {
+          fr: 'Pinot Noir « Côte de Granit » 2021',
+          de: 'Pinot Noir « Côte de Granit » 2021',
+          en: 'Pinot Noir “Côte de Granit” 2021',
+        },
+        description: {
+          fr: 'Cerise griotte, pivoine et boisé fondu. Tannins fins, douze mois en fûts.',
+          de: 'Sauerkirsche, Pfingstrose und dezentes Holz. Feine Tannine, zwölf Monate im Fass.',
+          en: 'Morello cherry, peony and integrated oak. Fine tannins, twelve months in barrel.',
+        },
+        image: {
+          url: 'https://images.unsplash.com/photo-1568213816046-0ee1c42bd559?auto=format&fit=crop&w=900&q=80',
+          alt: {
+            fr: 'Verres de vin rouge alignés sur un tonneau',
+            de: 'Rotweingläser auf einem Fass aufgereiht',
+            en: 'Glasses of red wine lined up on a barrel',
+          },
+        },
+      },
+      {
+        id: 'demo-cremant',
+        variantId: null,
+        available: true,
+        tag: { fr: 'Crémant d’Alsace', de: 'Crémant d’Alsace', en: 'Crémant d’Alsace' },
+        price: { amount: '15.00', currency: 'EUR' },
+        title: {
+          fr: 'Crémant d’Alsace Brut « Cuvée Joseph »',
+          de: 'Crémant d’Alsace Brut « Cuvée Joseph »',
+          en: 'Crémant d’Alsace Brut “Cuvée Joseph”',
+        },
+        description: {
+          fr: 'Bulle fine, brioche et pomme verte. Méthode traditionnelle, dosage extra-brut.',
+          de: 'Feine Perlage, Brioche und grüner Apfel. Traditionelle Methode, Extra-Brut.',
+          en: 'Fine bubbles, brioche and green apple. Traditional method, extra-brut dosage.',
+        },
+        image: {
+          url: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=900&q=80',
+          alt: {
+            fr: 'Bouteilles de vin d’Alsace alignées dans la pénombre de la cave',
+            de: 'Elsässer Weinflaschen im Halbdunkel des Kellers',
+            en: 'Alsatian wine bottles in the dim cellar',
+          },
+        },
+      },
+    ],
   },
 
   // ── Page d'accueil : intro + accès aux univers ───────────────────────────

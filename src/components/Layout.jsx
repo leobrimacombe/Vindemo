@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom'
 import Header from './Header.jsx'
 import Footer from './Footer.jsx'
 import ScrollToTop from './ScrollToTop.jsx'
+import CartDrawer from './boutique/CartDrawer.jsx'
 
 /**
  * Layout — ossature commune à toutes les pages : header fixe, contenu
@@ -25,6 +26,9 @@ export default function Layout() {
       </main>
 
       <Footer />
+
+      {/* Mini-panier — monté une fois, recouvre toutes les pages */}
+      <CartDrawer />
     </>
   )
 }

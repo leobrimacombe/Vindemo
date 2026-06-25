@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useLang } from '../i18n/LanguageContext.jsx'
 import { domaine } from '../data/domaine.js'
 import LanguageSwitcher from './LanguageSwitcher.jsx'
+import CartButton from './boutique/CartButton.jsx'
 
 /**
  * Header — fixe, transparent par-dessus la bannière (image sombre en tête de
@@ -81,6 +82,9 @@ export default function Header() {
 
         <div className="flex items-center gap-3 sm:gap-5">
           <LanguageSwitcher tone={tone} />
+
+          {/* Panier (desktop + mobile) */}
+          <CartButton tone={tone} />
 
           {/* Bouton menu mobile */}
           <button
