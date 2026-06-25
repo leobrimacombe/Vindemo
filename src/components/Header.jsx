@@ -1,14 +1,17 @@
 import { useEffect, useState } from 'react'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useLang } from '../i18n/LanguageContext.jsx'
 import { domaine } from '../data/domaine.js'
 import LanguageSwitcher from './LanguageSwitcher.jsx'
 
 /**
- * Header — transparent par-dessus le hero, puis fond crème translucide au
- * scroll. Navigation par ancres + menu mobile plein écran.
+ * Header — fixe, transparent par-dessus la bannière (image sombre en tête de
+ * chaque page), puis fond crème translucide au scroll. Navigation par routes
+ * + menu mobile plein écran.
  */
 export default function Header() {
   const { t } = useLang()
+  const { pathname } = useLocation()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -18,6 +21,9 @@ export default function Header() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  // Ferme le menu mobile à chaque changement de page
+  useEffect(() => setMenuOpen(false), [pathname])
 
   // Bloque le scroll du body quand le menu mobile est ouvert
   useEffect(() => {
@@ -33,34 +39,43 @@ export default function Header() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-smooth ${
-        scrolled
-          ? 'border-b border-ink/5 bg-cream-50/85 backdrop-blur-md'
-          : 'bg-transparent'
+        scrolled ? 'border-b border-ink/5 bg-cream-50/85 backdrop-blur-md' : 'bg-transparent'
       }`}
     >
       <div className="section-shell flex items-center justify-between py-5">
         {/* Logo / nom */}
-        <a
-          href="#contenu"
-          onClick={() => setMenuOpen(false)}
+        <Link
+          to="/"
           className={`whitespace-nowrap font-serif text-base font-medium tracking-wide transition-colors duration-500 sm:text-xl ${textColor}`}
         >
           {domaine.nom}
-        </a>
+        </Link>
 
         {/* Navigation desktop */}
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Navigation principale">
           {domaine.nav.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              className={`group relative font-sans text-sm tracking-wide transition-colors duration-300 ${
-                tone === 'light' ? 'text-cream-50/85 hover:text-cream-50' : 'text-ink/70 hover:text-bordeaux'
-              }`}
+            <NavLink
+              key={item.to}
+              to={item.to}
+              className={({ isActive }) =>
+                `group relative font-sans text-sm tracking-wide transition-colors duration-300 ${
+                  tone === 'light'
+                    ? 'text-cream-50/85 hover:text-cream-50'
+                    : 'text-ink/70 hover:text-bordeaux'
+                } ${isActive ? '!text-copper' : ''}`
+              }
             >
-              {t(item.label)}
-              <span className="absolute -bottom-1 left-0 h-px w-0 bg-copper transition-all duration-300 ease-smooth group-hover:w-full" />
-            </a>
+              {({ isActive }) => (
+                <>
+                  {t(item.label)}
+                  <span
+                    className={`absolute -bottom-1 left-0 h-px bg-copper transition-all duration-300 ease-smooth ${
+                      isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`}
+                  />
+                </>
+              )}
+            </NavLink>
           ))}
         </nav>
 
@@ -95,22 +110,20 @@ export default function Header() {
           menuOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
         }`}
       >
-        <nav
-          className="mt-28 flex flex-col gap-2 px-8"
-          aria-label="Navigation mobile"
-        >
+        <nav className="mt-28 flex flex-col gap-2 px-8" aria-label="Navigation mobile">
           {domaine.nav.map((item, i) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              onClick={() => setMenuOpen(false)}
+            <NavLink
+              key={item.to}
+              to={item.to}
               style={{ transitionDelay: menuOpen ? `${120 + i * 60}ms` : '0ms' }}
-              className={`border-b border-ink/10 py-4 font-serif text-3xl text-ink transition-all duration-500 ease-smooth ${
-                menuOpen ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'
-              }`}
+              className={({ isActive }) =>
+                `border-b border-ink/10 py-4 font-serif text-3xl transition-all duration-500 ease-smooth ${
+                  isActive ? 'text-copper' : 'text-ink'
+                } ${menuOpen ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'}`
+              }
             >
               {t(item.label)}
-            </a>
+            </NavLink>
           ))}
         </nav>
       </div>

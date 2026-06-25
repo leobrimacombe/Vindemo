@@ -33,13 +33,26 @@ function CuveeCard({ cuvee, index }) {
         {cuvee.nom}
       </h3>
 
-      <p className="mt-4 flex-1 text-[0.975rem] font-light leading-relaxed text-ink/70">
+      <p className="mt-4 text-[0.975rem] font-light leading-relaxed text-ink/70">
         {t(cuvee.notes)}
       </p>
+
+      {/* Accord mets-vins (si renseigné dans les données) */}
+      {cuvee.accord && (
+        <p className="mt-4 flex-1 text-sm font-light leading-relaxed text-ink/55">
+          <span className="font-medium uppercase tracking-wider text-copper">
+            {t({ fr: 'À table', de: 'Zu Tisch', en: 'At the table' })} ·{' '}
+          </span>
+          {t(cuvee.accord)}
+        </p>
+      )}
 
       <div className="mt-6 flex items-baseline gap-3">
         <span className="font-serif text-lg italic text-bordeaux">{cuvee.millesime}</span>
         <span className="h-px flex-1 bg-ink/10" />
+        {cuvee.service && (
+          <span className="font-sans text-xs tracking-wide text-ink/45">{cuvee.service}</span>
+        )}
       </div>
     </article>
   )
@@ -47,17 +60,27 @@ function CuveeCard({ cuvee, index }) {
 
 /**
  * Cuvées — grille de cartes par cépage alsacien.
+ *
+ * `showHeading` : affiche le sur-titre + titre de section. À désactiver quand
+ * la section est posée sous une bannière de page qui porte déjà le titre
+ * (évite la répétition « Nos cuvées » deux fois).
  */
-export default function Cuvees() {
+export default function Cuvees({ showHeading = true }) {
   const { t } = useLang()
   const { cuvees } = domaine
 
   return (
-    <section id="cuvees" className="bg-cream-50 py-24 sm:py-32 lg:py-40 scroll-mt-20">
+    <section id="cuvees" className="bg-cream-50 py-20 sm:py-28 lg:py-32 scroll-mt-20">
       <div className="section-shell">
-        <SectionHeading eyebrow={cuvees.eyebrow} title={cuvees.titre} intro={cuvees.intro} />
+        {showHeading ? (
+          <SectionHeading eyebrow={cuvees.eyebrow} title={cuvees.titre} intro={cuvees.intro} />
+        ) : (
+          <p className="max-w-prose text-lg font-light leading-relaxed text-ink/70">
+            {t(cuvees.intro)}
+          </p>
+        )}
 
-        <div className="mt-16 grid gap-x-10 gap-y-14 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3">
+        <div className="mt-14 grid gap-x-10 gap-y-14 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
           {cuvees.liste.map((cuvee, i) => (
             <CuveeCard key={cuvee.nom} cuvee={cuvee} index={i} />
           ))}
