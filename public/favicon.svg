@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#43141A" />
+  <!-- Stylised vine leaf / grape mark -->
+  <path
+    d="M16 6c0 4-3 5-3 9a3 3 0 0 0 6 0c0-4-3-5-3-9z"
+    fill="#CBA24A"
+  />
+  <circle cx="12.5" cy="21" r="2.2" fill="#CBA24A" />
+  <circle cx="19.5" cy="21" r="2.2" fill="#CBA24A" />
+  <circle cx="16" cy="24.5" r="2.2" fill="#CBA24A" />
+</svg>
