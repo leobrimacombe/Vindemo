@@ -1,15 +1,16 @@
 # Domaine Vogel-Stein — site vitrine
 
-Site vitrine premium pour un domaine viticole alsacien. Démo commerciale
-pensée pour donner envie à un vigneron de signer : éditorial, multilingue
-(FR / DE / EN), avec une visite du chai en 3D.
+Site vitrine premium **multi-pages** pour un domaine viticole alsacien. Démo
+commerciale pensée pour donner envie à un vigneron de signer : éditorial,
+multilingue (FR / DE / EN), avec une visite du chai en 3D.
 
 > Domaine fictif par défaut : **Domaine Vogel-Stein**, à Riquewihr (Alsace) —
 > _« Quatre générations, un terroir. »_
 
 ## Stack
 
-- **Vite + React** — application monopage
+- **Vite + React** — application monopage (SPA)
+- **React Router** — navigation multi-pages (`/`, `/le-domaine`, `/nos-cuvees`, `/oenotourisme`, `/contact`, pages légales)
 - **Tailwind CSS** — design system (palette terroir, polices serif/sans)
 - **Three.js** via **React Three Fiber** + **drei** — scène 3D du chai
 - **react-leaflet** — carte d'accès
@@ -31,23 +32,40 @@ fichier de données.
 
 ```
 src/
-├─ data/domaine.js        ← TOUT le contenu (textes FR/DE/EN, cuvées, horaires…)
+├─ data/domaine.js        ← TOUT le contenu (textes FR/DE/EN, cuvées, pages, horaires…)
 ├─ i18n/
 │  └─ LanguageContext.jsx ← langue active + helper de traduction t()
 ├─ hooks/useReveal.js     ← apparitions douces au scroll
+├─ App.jsx                ← table de routage (React Router)
+├─ pages/                 ← une vue par route
+│  ├─ Home.jsx            ← /              (hero + univers + chai 3D + CTA)
+│  ├─ LeDomaine.jsx       ← /le-domaine    (histoire + terroir + équipe)
+│  ├─ NosCuvees.jsx       ← /nos-cuvees    (catalogue des vins)
+│  ├─ Oenotourisme.jsx    ← /oenotourisme  (formules + chai 3D + réservation)
+│  ├─ Contact.jsx         ← /contact       (coordonnées + carte)
+│  ├─ Legal.jsx           ← /mentions-legales, /confidentialite
+│  └─ NotFound.jsx        ← 404
 ├─ components/
-│  ├─ Header.jsx          ← nav + sélecteur de langue
-│  ├─ Hero.jsx            ← 1. plein écran
-│  ├─ Histoire.jsx        ← 2. récit du domaine
-│  ├─ Cuvees.jsx          ← 3. grille des cépages
-│  ├─ Chai3D.jsx          ← 4. visite du chai (charge la 3D en lazy)
-│  ├─ Oenotourisme.jsx    ← 5. formules + réservation
-│  ├─ CalEmbed.jsx        ←    widget Cal.com
-│  ├─ Contact.jsx         ← 6. coordonnées + carte
-│  ├─ ContactMap.jsx      ←    carte Leaflet
-│  ├─ Footer.jsx          ← 7. pied de page
-│  └─ cellar/             ←    scène 3D (Canvas, fûts, voûte, lanternes)
+│  ├─ Layout.jsx          ← header + footer communs (+ ScrollToTop)
+│  ├─ Header.jsx          ← nav par routes + sélecteur de langue
+│  ├─ PageHero.jsx        ← bannière d'en-tête des pages internes
+│  ├─ Seo.jsx             ← <title> + meta description par page
+│  ├─ Hero.jsx · HomeUnivers.jsx · CtaBand.jsx      ← accueil
+│  ├─ Histoire.jsx · Terroir.jsx · Equipe.jsx       ← le domaine
+│  ├─ Cuvees.jsx                                     ← les cuvées
+│  ├─ Oenotourisme.jsx · CalEmbed.jsx · InfosPratiques.jsx ← œnotourisme
+│  ├─ Chai3D.jsx          ← visite du chai (charge la 3D en lazy)
+│  ├─ Contact.jsx · ContactMap.jsx                  ← contact + carte Leaflet
+│  ├─ Footer.jsx
+│  └─ cellar/             ← scène 3D (Canvas, fûts, voûte, lanternes)
 ```
+
+### Ajouter / modifier une page
+
+1. **Contenu** : ajoutez une entrée dans `domaine.pages` (bannière + SEO) et un
+   item dans `domaine.nav` (libellé + `to`) dans `src/data/domaine.js`.
+2. **Vue** : créez `src/pages/MaPage.jsx` (réutilisez `PageHero`, `Seo` et les
+   sections existantes), puis déclarez la `<Route>` dans `src/App.jsx`.
 
 ## 🔁 Reskinner pour un autre domaine
 

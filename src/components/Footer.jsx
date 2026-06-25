@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useLang } from '../i18n/LanguageContext.jsx'
 import { domaine } from '../data/domaine.js'
 
@@ -13,30 +14,45 @@ export default function Footer() {
   return (
     <footer className="bg-bordeaux-deep text-cream-100">
       <div className="section-shell py-16">
-        <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-col gap-12 md:flex-row md:justify-between">
           {/* Identité */}
           <div>
-            <p className="font-serif text-2xl text-cream-50">{nom}</p>
+            <Link to="/" className="font-serif text-2xl text-cream-50">
+              {nom}
+            </Link>
             <p className="mt-2 font-serif text-lg italic text-copper-light">{t(tagline)}</p>
             <p className="mt-1 font-sans text-xs uppercase tracking-widest text-cream-100/50">
               {village} · {t(domaine.region)}
             </p>
+
+            {/* Réseaux */}
+            <div className="mt-6 flex items-center gap-5">
+              {reseaux.map((r) => (
+                <a
+                  key={r.nom}
+                  href={r.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-sans text-sm text-cream-100/70 transition-colors hover:text-copper-light"
+                >
+                  {r.nom}
+                </a>
+              ))}
+            </div>
           </div>
 
-          {/* Réseaux + ancre haut de page */}
-          <div className="flex items-center gap-6">
-            {reseaux.map((r) => (
-              <a
-                key={r.nom}
-                href={r.url}
-                target="_blank"
-                rel="noopener noreferrer"
+          {/* Plan du site */}
+          <nav className="flex flex-col gap-3" aria-label="Plan du site">
+            {domaine.nav.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
                 className="font-sans text-sm text-cream-100/70 transition-colors hover:text-copper-light"
               >
-                {r.nom}
-              </a>
+                {t(item.label)}
+              </Link>
             ))}
-          </div>
+          </nav>
         </div>
 
         {/* Mention sanitaire — obligatoire en France */}
@@ -51,9 +67,9 @@ export default function Footer() {
           </p>
           <nav className="flex gap-5" aria-label="Liens légaux">
             {footer.legalLinks.map((l, i) => (
-              <a key={i} href={l.url} className="transition-colors hover:text-cream-50">
+              <Link key={i} to={l.to} className="transition-colors hover:text-cream-50">
                 {t(l.label)}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>

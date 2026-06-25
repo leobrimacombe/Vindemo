@@ -7,7 +7,7 @@ import SectionHeading from './SectionHeading.jsx'
 // La carte (et leaflet) ne sont chargées qu'à l'approche de la section.
 const ContactMap = lazy(() => import('./ContactMap.jsx'))
 
-export default function Contact() {
+export default function Contact({ showHeading = true }) {
   const { t } = useLang()
   const { contact } = domaine
   const map = useReveal({ threshold: 0.05 })
@@ -15,11 +15,17 @@ export default function Contact() {
   const telHref = `tel:${contact.telephone.replace(/\s/g, '')}`
 
   return (
-    <section id="contact" className="bg-cream-50 py-24 sm:py-32 lg:py-40 scroll-mt-20">
+    <section id="contact" className="bg-cream-50 py-20 sm:py-28 lg:py-32 scroll-mt-20">
       <div className="section-shell">
-        <SectionHeading eyebrow={contact.eyebrow} title={contact.titre} intro={contact.intro} />
+        {showHeading ? (
+          <SectionHeading eyebrow={contact.eyebrow} title={contact.titre} intro={contact.intro} />
+        ) : (
+          <p className="max-w-prose text-lg font-light leading-relaxed text-ink/70">
+            {t(contact.intro)}
+          </p>
+        )}
 
-        <div className="mt-16 grid gap-12 lg:mt-20 lg:grid-cols-2 lg:gap-16">
+        <div className="mt-14 grid gap-12 lg:mt-16 lg:grid-cols-2 lg:gap-16">
           {/* Coordonnées + horaires */}
           <div className="space-y-10">
             {/* Adresse & contact direct */}

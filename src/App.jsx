@@ -1,39 +1,31 @@
-import Header from './components/Header.jsx'
-import Hero from './components/Hero.jsx'
-import Histoire from './components/Histoire.jsx'
-import Cuvees from './components/Cuvees.jsx'
-import Chai3D from './components/Chai3D.jsx'
-import Oenotourisme from './components/Oenotourisme.jsx'
-import Contact from './components/Contact.jsx'
-import Footer from './components/Footer.jsx'
+import { Routes, Route } from 'react-router-dom'
+import Layout from './components/Layout.jsx'
+import Home from './pages/Home.jsx'
+import LeDomaine from './pages/LeDomaine.jsx'
+import NosCuvees from './pages/NosCuvees.jsx'
+import Oenotourisme from './pages/Oenotourisme.jsx'
+import Contact from './pages/Contact.jsx'
+import Legal from './pages/Legal.jsx'
+import NotFound from './pages/NotFound.jsx'
 
 /**
- * App — assemble les sections dans l'ordre. Aucune logique métier ici :
- * tout le contenu provient de src/data/domaine.js via le contexte de langue.
+ * App — table de routage. Toutes les pages partagent le même Layout
+ * (header + footer). Le contenu de chaque page provient de src/data/domaine.js.
  */
 export default function App() {
   return (
-    <>
-      {/* Lien d'évitement pour l'accessibilité clavier */}
-      <a
-        href="#contenu"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-bordeaux focus:px-5 focus:py-2 focus:text-sm focus:text-cream-50"
-      >
-        Aller au contenu
-      </a>
-
-      <Header />
-
-      <main id="contenu">
-        <Hero />
-        <Histoire />
-        <Cuvees />
-        <Chai3D />
-        <Oenotourisme />
-        <Contact />
-      </main>
-
-      <Footer />
-    </>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="le-domaine" element={<LeDomaine />} />
+        <Route path="nos-cuvees" element={<NosCuvees />} />
+        <Route path="oenotourisme" element={<Oenotourisme />} />
+        <Route path="contact" element={<Contact />} />
+        {/* Pages légales : une même vue paramétrée par la route */}
+        <Route path="mentions-legales" element={<Legal route="/mentions-legales" />} />
+        <Route path="confidentialite" element={<Legal route="/confidentialite" />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   )
 }

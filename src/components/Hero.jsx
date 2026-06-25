@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useLang } from '../i18n/LanguageContext.jsx'
 import { domaine } from '../data/domaine.js'
 
@@ -45,21 +46,21 @@ export default function Hero() {
         </p>
 
         <div className="mt-12 flex animate-fade-up flex-col gap-4 opacity-0 [animation-delay:750ms] sm:flex-row sm:items-center">
-          <a href="#reserver" className="btn-primary">
+          <Link to="/oenotourisme" className="btn-primary">
             {t(hero.ctaPrimary)}
-          </a>
-          <a
-            href="#histoire"
+          </Link>
+          <Link
+            to="/le-domaine"
             className="btn-ghost text-cream-50 hover:!bg-cream-50 hover:!text-ink"
           >
             {t(hero.ctaSecondary)}
-          </a>
+          </Link>
         </div>
       </div>
 
-      {/* Indice de scroll */}
+      {/* Indice de scroll vers la suite de la page d'accueil */}
       <a
-        href="#histoire"
+        href="#decouvrir"
         aria-label={t(hero.scrollHint)}
         className="absolute inset-x-0 bottom-8 z-10 mx-auto flex w-fit flex-col items-center gap-2 text-cream-50/70 transition-colors hover:text-cream-50"
       >
