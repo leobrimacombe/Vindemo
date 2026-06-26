@@ -136,6 +136,9 @@ function normalizeProduct(node) {
   const money = variant?.price || node.priceRange?.minVariantPrice
   return {
     id: node.id,
+    // Handle Shopify (slug du produit) : sert à relier un produit à sa fiche
+    // éditoriale /nos-cuvees/:slug quand le handle correspond au slug d'une cuvée.
+    handle: node.handle || null,
     // merchandiseId requis par l'API Cart. Null si le produit n'a aucune
     // variante achetable → l'UI le traitera comme non commandable.
     variantId: variant?.id || null,

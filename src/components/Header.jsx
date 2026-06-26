@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useLang } from '../i18n/LanguageContext.jsx'
 import { domaine } from '../data/domaine.js'
+import { useHeaderSolid } from './HeaderContext.jsx'
 import LanguageSwitcher from './LanguageSwitcher.jsx'
 import CartButton from './boutique/CartButton.jsx'
 
@@ -15,6 +16,8 @@ export default function Header() {
   const { pathname } = useLocation()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  // Page sans bannière sombre (ex. fiche produit) : header opaque dès le départ.
+  const forcedSolid = useHeaderSolid()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -34,13 +37,16 @@ export default function Header() {
     }
   }, [menuOpen])
 
-  const tone = scrolled || menuOpen ? 'dark' : 'light'
+  // Fond opaque si on a scrollé, si le menu mobile est ouvert, ou si la page
+  // l'exige (fond clair en haut sans bannière sombre).
+  const solid = scrolled || menuOpen || forcedSolid
+  const tone = solid ? 'dark' : 'light'
   const textColor = tone === 'light' ? 'text-cream-50' : 'text-ink'
 
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-smooth ${
-        scrolled ? 'border-b border-ink/5 bg-cream-50/85 backdrop-blur-md' : 'bg-transparent'
+        solid ? 'border-b border-ink/5 bg-cream-50/85 backdrop-blur-md' : 'bg-transparent'
       }`}
     >
       <div className="section-shell flex items-center justify-between py-5">

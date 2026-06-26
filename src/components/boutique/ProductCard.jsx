@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom'
 import { useLang } from '../../i18n/LanguageContext.jsx'
 import { useReveal } from '../../hooks/useReveal.js'
-import { domaine } from '../../data/domaine.js'
+import { domaine, hasCuvee } from '../../data/domaine.js'
 import { formatPrice } from '../../lib/shopify.js'
 
 /**
@@ -21,6 +22,11 @@ export default function ProductCard({ product, index = 0, onAdd }) {
 
   const available = product.available !== false
   const price = formatPrice(product.price?.amount, product.price?.currency, lang)
+
+  // Lien vers la fiche éditoriale si le produit correspond à une cuvée connue
+  // (slug des produits de démo, ou handle Shopify identique au slug d'une cuvée).
+  const ficheSlug = product.slug || product.handle
+  const fiche = hasCuvee(ficheSlug) ? ficheSlug : null
 
   return (
     <article
@@ -58,12 +64,38 @@ export default function ProductCard({ product, index = 0, onAdd }) {
           </span>
         )}
 
-        <h3 className="mt-3 font-serif text-2xl leading-snug text-ink">{t(product.title)}</h3>
+        <h3 className="mt-3 font-serif text-2xl leading-snug text-ink">
+          {fiche ? (
+            <Link
+              to={`/nos-cuvees/${fiche}`}
+              className="transition-colors duration-300 hover:text-bordeaux focus-visible:text-bordeaux"
+            >
+              {t(product.title)}
+            </Link>
+          ) : (
+            t(product.title)
+          )}
+        </h3>
 
         {product.description && (
           <p className="mt-3 line-clamp-3 flex-1 text-[0.975rem] font-light leading-relaxed text-ink/70">
             {t(product.description)}
           </p>
+        )}
+
+        {fiche && (
+          <Link
+            to={`/nos-cuvees/${fiche}`}
+            className="group/fiche mt-4 inline-flex items-center gap-2 self-start font-sans text-sm font-medium tracking-wide text-bordeaux"
+          >
+            {t(domaine.cuvees.fiche.voir)}
+            <span
+              className="transition-transform duration-300 group-hover/fiche:translate-x-1"
+              aria-hidden="true"
+            >
+              →
+            </span>
+          </Link>
         )}
 
         <div className="mt-6 flex items-baseline gap-3">

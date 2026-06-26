@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useLang } from '../i18n/LanguageContext.jsx'
 import { domaine } from '../data/domaine.js'
 import { useReveal } from '../hooks/useReveal.js'
@@ -30,7 +31,17 @@ function CuveeCard({ cuvee, index }) {
       </div>
 
       <h3 className="mt-4 font-serif text-2xl leading-snug text-ink sm:text-[1.65rem]">
-        {cuvee.nom}
+        {cuvee.slug ? (
+          <Link
+            to={`/nos-cuvees/${cuvee.slug}`}
+            className="transition-colors duration-300 hover:text-bordeaux focus-visible:text-bordeaux"
+          >
+            <span className="absolute inset-0" aria-hidden="true" />
+            {cuvee.nom}
+          </Link>
+        ) : (
+          cuvee.nom
+        )}
       </h3>
 
       <p className="mt-4 text-[0.975rem] font-light leading-relaxed text-ink/70">
@@ -54,6 +65,18 @@ function CuveeCard({ cuvee, index }) {
           <span className="font-sans text-xs tracking-wide text-ink/45">{cuvee.service}</span>
         )}
       </div>
+
+      {cuvee.slug && (
+        <span className="mt-5 inline-flex items-center gap-2 font-sans text-sm font-medium tracking-wide text-bordeaux">
+          {t(domaine.cuvees.fiche.voir)}
+          <span
+            className="transition-transform duration-300 group-hover:translate-x-1"
+            aria-hidden="true"
+          >
+            →
+          </span>
+        </span>
+      )}
     </article>
   )
 }

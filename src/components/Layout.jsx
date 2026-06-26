@@ -3,6 +3,8 @@ import Header from './Header.jsx'
 import Footer from './Footer.jsx'
 import ScrollToTop from './ScrollToTop.jsx'
 import CartDrawer from './boutique/CartDrawer.jsx'
+import AgeGate from './AgeGate.jsx'
+import { HeaderProvider } from './HeaderContext.jsx'
 
 /**
  * Layout — ossature commune à toutes les pages : header fixe, contenu
@@ -10,7 +12,7 @@ import CartDrawer from './boutique/CartDrawer.jsx'
  */
 export default function Layout() {
   return (
-    <>
+    <HeaderProvider>
       <a
         href="#contenu"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-bordeaux focus:px-5 focus:py-2 focus:text-sm focus:text-cream-50"
@@ -29,6 +31,9 @@ export default function Layout() {
 
       {/* Mini-panier — monté une fois, recouvre toutes les pages */}
       <CartDrawer />
-    </>
+
+      {/* Vérification d'âge — recouvre tout à la première visite */}
+      <AgeGate />
+    </HeaderProvider>
   )
 }

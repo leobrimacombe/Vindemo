@@ -131,95 +131,370 @@ export const domaine = {
     },
     liste: [
       {
+        slug: 'riesling-grand-cru-schoenenbourg',
+        origine: { fr: 'Alsace, France', de: 'Elsass, Frankreich', en: 'Alsace, France' },
+        contenance: '75 cl',
+        allergenes: { fr: 'Contient des sulfites', de: 'Enthält Sulfite', en: 'Contains sulphites' },
         nom: 'Riesling Grand Cru Schoenenbourg',
         cepage: 'Riesling',
+        cepages: ['Riesling'],
         millesime: '2021',
         couleur: '#E4C65B',
         type: 'blanc',
         service: '8–10 °C',
+        degre: '13 % vol.',
+        garde: { fr: 'À boire ou à garder jusqu’en 2035', de: 'Trinkreif oder lagerfähig bis 2035', en: 'Drink now or cellar until 2035' },
+        elevage: {
+          fr: 'Élevage sur lies fines en foudres de chêne pendant douze mois.',
+          de: 'Ausbau auf der Feinhefe in Eichenfudern über zwölf Monate.',
+          en: 'Aged on fine lees in oak foudres for twelve months.',
+        },
         signature: true,
+        image:
+          'https://images.unsplash.com/photo-1474722883778-792e7990302f?auto=format&fit=crop&w=1600&q=80',
+        imageAlt: {
+          fr: 'Verre de Riesling devant un rang de vigne au soleil',
+          de: 'Glas Riesling vor einer sonnigen Rebzeile',
+          en: 'Glass of Riesling in front of a sunlit vine row',
+        },
+        appellation: {
+          type: 'AOC',
+          nom: 'Alsace Grand Cru Schoenenbourg',
+        },
         notes: {
           fr: 'Citron confit, pierre à fusil et une tension saline qui ne faiblit pas. La signature du domaine.',
           de: 'Zitronenkonfit, Feuerstein und eine salzige Spannung, die nicht nachlässt. Die Signatur des Weinguts.',
           en: 'Candied lemon, gunflint and a saline tension that never lets up. The estate’s signature.',
+        },
+        degustation: {
+          robe: {
+            fr: 'Or pâle aux reflets verts, brillante et limpide.',
+            de: 'Blassgold mit grünen Reflexen, glänzend und klar.',
+            en: 'Pale gold with green glints, bright and limpid.',
+          },
+          nez: {
+            fr: 'Citron confit, fleur d’acacia et une fumée minérale de pierre à fusil.',
+            de: 'Zitronenkonfit, Akazienblüte und ein mineralischer Feuerstein-Rauch.',
+            en: 'Candied lemon, acacia blossom and a mineral gunflint smoke.',
+          },
+          bouche: {
+            fr: 'Droite et saline, portée par une acidité cristalline et une longue finale iodée.',
+            de: 'Geradlinig und salzig, getragen von kristalliner Säure und langem, jodigem Abgang.',
+            en: 'Straight and saline, carried by crystalline acidity and a long, briny finish.',
+          },
         },
         accord: {
           fr: 'Truite des Vosges, choucroute de la mer, fromages de chèvre frais.',
           de: 'Vogesen-Forelle, Fisch-Sauerkraut, frische Ziegenkäse.',
           en: 'Vosges trout, seafood choucroute, fresh goat’s cheeses.',
         },
+        accords: [
+          { fr: 'Truite des Vosges au bleu', de: 'Vogesen-Forelle blau', en: 'Vosges trout “au bleu”' },
+          { fr: 'Choucroute de la mer', de: 'Fisch-Sauerkraut', en: 'Seafood choucroute' },
+          { fr: 'Fromages de chèvre frais', de: 'Frische Ziegenkäse', en: 'Fresh goat’s cheeses' },
+          { fr: 'Sushis et sashimis', de: 'Sushi und Sashimi', en: 'Sushi and sashimi' },
+        ],
+        medailles: [
+          {
+            concours: 'Concours Général Agricole Paris',
+            annee: '2022',
+            recompense: { fr: 'Médaille d’Or', de: 'Goldmedaille', en: 'Gold Medal' },
+          },
+          {
+            concours: 'Decanter World Wine Awards',
+            annee: '2022',
+            recompense: { fr: '95/100 — Platine', de: '95/100 — Platin', en: '95/100 — Platinum' },
+          },
+        ],
       },
       {
+        slug: 'gewurztraminer-vendanges-tardives',
+        origine: { fr: 'Alsace, France', de: 'Elsass, Frankreich', en: 'Alsace, France' },
+        contenance: '50 cl',
+        allergenes: { fr: 'Contient des sulfites', de: 'Enthält Sulfite', en: 'Contains sulphites' },
         nom: 'Gewurztraminer Vendanges Tardives',
         cepage: 'Gewurztraminer',
+        cepages: ['Gewurztraminer'],
         millesime: '2019',
         couleur: '#E8A24C',
         type: 'blanc',
         service: '9–11 °C',
+        degre: '13,5 % vol.',
+        garde: { fr: 'Apogée entre 2025 et 2040', de: 'Höhepunkt zwischen 2025 und 2040', en: 'At its peak between 2025 and 2040' },
+        elevage: {
+          fr: 'Raisins surmûris vendangés par tries successives, élevage lent en cuve.',
+          de: 'Edelreife Trauben in mehreren Lesedurchgängen geerntet, langsamer Ausbau im Tank.',
+          en: 'Overripe grapes picked in successive passes, slow ageing in tank.',
+        },
+        image:
+          'https://images.unsplash.com/photo-1528823872057-9c018a7a7553?auto=format&fit=crop&w=1600&q=80',
+        imageAlt: {
+          fr: 'Verres de vin blanc liquoreux levés lors d’une dégustation',
+          de: 'Erhobene Gläser edelsüßen Weißweins bei einer Verkostung',
+          en: 'Glasses of sweet white wine raised during a tasting',
+        },
+        appellation: {
+          type: 'AOC',
+          nom: 'Alsace Vendanges Tardives',
+        },
         notes: {
           fr: 'Rose, litchi et gingembre confit. Une douceur ample tenue par une fraîcheur épicée.',
           de: 'Rose, Litschi und kandierter Ingwer. Eine üppige Süße, gehalten von würziger Frische.',
           en: 'Rose, lychee and candied ginger. A generous sweetness held by spiced freshness.',
+        },
+        degustation: {
+          robe: {
+            fr: 'Or intense et lumineux, dense dans le verre.',
+            de: 'Intensives, leuchtendes Gold, dicht im Glas.',
+            en: 'Intense, luminous gold, dense in the glass.',
+          },
+          nez: {
+            fr: 'Rose fanée, litchi, gingembre confit et un soupçon de miel d’acacia.',
+            de: 'Verblühte Rose, Litschi, kandierter Ingwer und ein Hauch Akazienhonig.',
+            en: 'Faded rose, lychee, candied ginger and a touch of acacia honey.',
+          },
+          bouche: {
+            fr: 'Douceur ample et onctueuse, équilibrée par une fraîcheur épicée et une finale sur le pamplemousse confit.',
+            de: 'Üppige, cremige Süße, ausbalanciert durch würzige Frische und einen Abgang auf kandierter Grapefruit.',
+            en: 'Ample, unctuous sweetness, balanced by spiced freshness and a finish of candied grapefruit.',
+          },
         },
         accord: {
           fr: 'Foie gras, munster affiné, tarte aux mirabelles.',
           de: 'Gänseleber, gereifter Munster, Mirabellen-Tarte.',
           en: 'Foie gras, aged Munster, mirabelle plum tart.',
         },
+        accords: [
+          { fr: 'Foie gras poêlé', de: 'Gebratene Gänseleber', en: 'Pan-seared foie gras' },
+          { fr: 'Munster affiné', de: 'Gereifter Munster', en: 'Aged Munster cheese' },
+          { fr: 'Tarte aux mirabelles', de: 'Mirabellen-Tarte', en: 'Mirabelle plum tart' },
+          { fr: 'Cuisine épicée thaïe', de: 'Würzige thailändische Küche', en: 'Spicy Thai cuisine' },
+        ],
+        medailles: [
+          {
+            concours: 'Concours des Vins d’Alsace',
+            annee: '2021',
+            recompense: { fr: 'Médaille d’Or', de: 'Goldmedaille', en: 'Gold Medal' },
+          },
+          {
+            concours: 'Gilbert & Gaillard',
+            annee: '2021',
+            recompense: { fr: '92/100', de: '92/100', en: '92/100' },
+          },
+        ],
       },
       {
+        slug: 'pinot-gris-les-marnes',
+        origine: { fr: 'Alsace, France', de: 'Elsass, Frankreich', en: 'Alsace, France' },
+        contenance: '75 cl',
+        allergenes: { fr: 'Contient des sulfites', de: 'Enthält Sulfite', en: 'Contains sulphites' },
         nom: 'Pinot Gris « Les Marnes »',
         cepage: 'Pinot Gris',
+        cepages: ['Pinot Gris'],
         millesime: '2022',
         couleur: '#D8B27A',
         type: 'blanc',
         service: '10–12 °C',
+        degre: '13 % vol.',
+        garde: { fr: 'À boire ou à garder jusqu’en 2030', de: 'Trinkreif oder lagerfähig bis 2030', en: 'Drink now or cellar until 2030' },
+        elevage: {
+          fr: 'Fermentation et élevage en cuve inox, six mois sur lies fines.',
+          de: 'Gärung und Ausbau im Edelstahltank, sechs Monate auf der Feinhefe.',
+          en: 'Fermented and aged in stainless steel, six months on fine lees.',
+        },
+        image:
+          'https://images.unsplash.com/photo-1568213816046-0ee1c42bd559?auto=format&fit=crop&w=1600&q=80',
+        imageAlt: {
+          fr: 'Verre de Pinot Gris doré posé sur un tonneau',
+          de: 'Glas goldener Pinot Gris auf einem Fass',
+          en: 'Glass of golden Pinot Gris resting on a barrel',
+        },
+        appellation: {
+          type: 'AOC',
+          nom: 'Alsace',
+        },
         notes: {
           fr: 'Poire mûre, noisette et un soupçon de fumé. Texture soyeuse, finale sur les fruits secs.',
           de: 'Reife Birne, Haselnuss und ein Hauch Rauch. Seidige Textur, Abgang auf Trockenfrüchten.',
           en: 'Ripe pear, hazelnut and a hint of smoke. Silky texture, a finish of dried fruits.',
+        },
+        degustation: {
+          robe: {
+            fr: 'Jaune doré profond, aux reflets ambrés.',
+            de: 'Tiefes Goldgelb mit bernsteinfarbenen Reflexen.',
+            en: 'Deep golden yellow with amber glints.',
+          },
+          nez: {
+            fr: 'Poire mûre, noisette grillée et une fine note fumée.',
+            de: 'Reife Birne, geröstete Haselnuss und eine feine Rauchnote.',
+            en: 'Ripe pear, toasted hazelnut and a fine smoky note.',
+          },
+          bouche: {
+            fr: 'Texture soyeuse et ronde, demi-sec, avec une finale persistante sur les fruits secs.',
+            de: 'Seidige, runde Textur, halbtrocken, mit anhaltendem Abgang auf Trockenfrüchten.',
+            en: 'Silky, round texture, off-dry, with a lingering finish of dried fruits.',
+          },
         },
         accord: {
           fr: 'Volaille à la crème, risotto aux cèpes, poissons fumés.',
           de: 'Geflügel in Rahm, Steinpilz-Risotto, geräucherter Fisch.',
           en: 'Creamed poultry, cep risotto, smoked fish.',
         },
+        accords: [
+          { fr: 'Volaille à la crème', de: 'Geflügel in Rahm', en: 'Creamed poultry' },
+          { fr: 'Risotto aux cèpes', de: 'Steinpilz-Risotto', en: 'Cep risotto' },
+          { fr: 'Poissons fumés', de: 'Geräucherter Fisch', en: 'Smoked fish' },
+          { fr: 'Tarte flambée gratinée', de: 'Überbackener Flammkuchen', en: 'Gratinated tarte flambée' },
+        ],
+        medailles: [
+          {
+            concours: 'Concours Général Agricole Paris',
+            annee: '2023',
+            recompense: { fr: 'Médaille d’Argent', de: 'Silbermedaille', en: 'Silver Medal' },
+          },
+        ],
       },
       {
+        slug: 'pinot-noir-cote-de-granit',
+        origine: { fr: 'Alsace, France', de: 'Elsass, Frankreich', en: 'Alsace, France' },
+        contenance: '75 cl',
+        allergenes: { fr: 'Contient des sulfites', de: 'Enthält Sulfite', en: 'Contains sulphites' },
         nom: 'Pinot Noir « Côte de Granit »',
         cepage: 'Pinot Noir',
+        cepages: ['Pinot Noir'],
         millesime: '2021',
         couleur: '#8C2F3A',
         type: 'rouge',
         service: '14–16 °C',
+        degre: '13 % vol.',
+        garde: { fr: 'Apogée entre 2025 et 2032', de: 'Höhepunkt zwischen 2025 und 2032', en: 'At its peak between 2025 and 2032' },
+        elevage: {
+          fr: 'Élevage de douze mois en fûts de chêne, dont un tiers de bois neuf.',
+          de: 'Zwölf Monate Ausbau in Eichenfässern, davon ein Drittel neues Holz.',
+          en: 'Twelve months of ageing in oak barrels, one third new wood.',
+        },
+        image:
+          'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1600&q=80',
+        imageAlt: {
+          fr: 'Bouteilles de vin rouge alignées dans la pénombre de la cave',
+          de: 'Rotweinflaschen im Halbdunkel des Kellers aufgereiht',
+          en: 'Red wine bottles lined up in the dim cellar',
+        },
+        appellation: {
+          type: 'AOC',
+          nom: 'Alsace',
+        },
         notes: {
           fr: 'Cerise griotte, pivoine et un boisé fondu. Tannins fins, élevage de douze mois en fûts.',
           de: 'Sauerkirsche, Pfingstrose und dezentes Holz. Feine Tannine, zwölf Monate Fassreife.',
           en: 'Morello cherry, peony and integrated oak. Fine tannins, twelve months of barrel ageing.',
+        },
+        degustation: {
+          robe: {
+            fr: 'Rubis profond et brillant, aux larmes lentes.',
+            de: 'Tiefes, glänzendes Rubinrot mit langsamen Kirchenfenstern.',
+            en: 'Deep, bright ruby with slow legs.',
+          },
+          nez: {
+            fr: 'Cerise griotte, pivoine et un boisé fondu finement épicé.',
+            de: 'Sauerkirsche, Pfingstrose und dezent würziges Holz.',
+            en: 'Morello cherry, peony and finely spiced, integrated oak.',
+          },
+          bouche: {
+            fr: 'Tannins fins et soyeux, fruit éclatant et finale fraîche sur la griotte.',
+            de: 'Feine, seidige Tannine, strahlende Frucht und frischer Abgang auf Sauerkirsche.',
+            en: 'Fine, silky tannins, vivid fruit and a fresh, morello-cherry finish.',
+          },
         },
         accord: {
           fr: 'Baeckeoffe, gibier à plume, magret de canard.',
           de: 'Baeckeoffe, Federwild, Entenbrust.',
           en: 'Baeckeoffe, feathered game, duck breast.',
         },
+        accords: [
+          { fr: 'Baeckeoffe traditionnel', de: 'Traditioneller Baeckeoffe', en: 'Traditional Baeckeoffe' },
+          { fr: 'Gibier à plume', de: 'Federwild', en: 'Feathered game' },
+          { fr: 'Magret de canard', de: 'Entenbrust', en: 'Duck breast' },
+          { fr: 'Munster jeune', de: 'Junger Munster', en: 'Young Munster cheese' },
+        ],
+        medailles: [
+          {
+            concours: 'Concours des Grands Vins de France Mâcon',
+            annee: '2023',
+            recompense: { fr: 'Médaille d’Or', de: 'Goldmedaille', en: 'Gold Medal' },
+          },
+        ],
       },
       {
+        slug: 'cremant-alsace-cuvee-joseph',
+        origine: { fr: 'Alsace, France', de: 'Elsass, Frankreich', en: 'Alsace, France' },
+        contenance: '75 cl',
+        allergenes: { fr: 'Contient des sulfites', de: 'Enthält Sulfite', en: 'Contains sulphites' },
         nom: 'Crémant d’Alsace Brut « Cuvée Joseph »',
         cepage: "Crémant d'Alsace",
+        cepages: ['Pinot Blanc', 'Auxerrois', 'Pinot Noir'],
         millesime: 'Brut',
         couleur: '#EAD9A8',
         type: 'effervescent',
         service: '6–8 °C',
+        degre: '12 % vol.',
+        garde: { fr: 'À déguster dans les trois ans', de: 'Innerhalb von drei Jahren genießen', en: 'Best enjoyed within three years' },
+        elevage: {
+          fr: 'Méthode traditionnelle, vieillissement minimum de dix-huit mois sur lattes, dosage extra-brut.',
+          de: 'Traditionelle Methode, mindestens achtzehn Monate Hefelager, Extra-Brut dosiert.',
+          en: 'Traditional method, a minimum of eighteen months on laths, extra-brut dosage.',
+        },
+        image:
+          'https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format&fit=crop&w=1600&q=80',
+        imageAlt: {
+          fr: 'Coupes de crémant servies lors d’une dégustation festive',
+          de: 'Crémant-Gläser bei einer festlichen Verkostung serviert',
+          en: 'Crémant flutes served at a festive tasting',
+        },
+        appellation: {
+          type: 'AOC',
+          nom: 'Crémant d’Alsace',
+        },
         notes: {
           fr: 'Bulle fine, brioche et pomme verte. Élaboré selon la méthode traditionnelle, dosage extra-brut.',
           de: 'Feine Perlage, Brioche und grüner Apfel. Traditionelle Flaschengärung, Extra-Brut dosiert.',
           en: 'Fine bubbles, brioche and green apple. Made in the traditional method, extra-brut dosage.',
+        },
+        degustation: {
+          robe: {
+            fr: 'Jaune pâle brillant, cordon de fines bulles persistant.',
+            de: 'Glänzendes Blassgelb mit anhaltendem, feinem Perlenstrang.',
+            en: 'Bright pale yellow with a persistent string of fine bubbles.',
+          },
+          nez: {
+            fr: 'Pomme verte, fleurs blanches et une note briochée délicate.',
+            de: 'Grüner Apfel, weiße Blüten und eine zarte Briochenote.',
+            en: 'Green apple, white flowers and a delicate brioche note.',
+          },
+          bouche: {
+            fr: 'Effervescence crémeuse et fine, vive et désaltérante, finale extra-brut nette.',
+            de: 'Cremig-feine Perlage, lebendig und erfrischend, klarer Extra-Brut-Abgang.',
+            en: 'Creamy, fine effervescence, lively and refreshing, with a clean extra-brut finish.',
+          },
         },
         accord: {
           fr: 'À l’apéritif, huîtres, desserts peu sucrés.',
           de: 'Als Aperitif, Austern, wenig süße Desserts.',
           en: 'As an aperitif, oysters, lightly sweetened desserts.',
         },
+        accords: [
+          { fr: 'À l’apéritif', de: 'Als Aperitif', en: 'As an aperitif' },
+          { fr: 'Huîtres et fruits de mer', de: 'Austern und Meeresfrüchte', en: 'Oysters and seafood' },
+          { fr: 'Desserts peu sucrés', de: 'Wenig süße Desserts', en: 'Lightly sweetened desserts' },
+          { fr: 'Tarte flambée', de: 'Flammkuchen', en: 'Tarte flambée' },
+        ],
+        medailles: [
+          {
+            concours: 'Effervescents du Monde',
+            annee: '2022',
+            recompense: { fr: 'Médaille d’Or', de: 'Goldmedaille', en: 'Gold Medal' },
+          },
+        ],
       },
     ],
     // Lien optionnel vers une carte des vins (placeholder)
@@ -228,6 +503,30 @@ export const domaine = {
       fr: 'Voir la carte complète',
       de: 'Komplette Weinkarte ansehen',
       en: 'View the full wine list',
+    },
+    // Libellés de la fiche produit (page /nos-cuvees/:slug), résolus via t().
+    fiche: {
+      voir: { fr: 'Voir la fiche', de: 'Zum Datenblatt', en: 'View details' },
+      retour: { fr: 'Retour aux cuvées', de: 'Zurück zu den Weinen', en: 'Back to the wines' },
+      appellation: { fr: 'Appellation', de: 'Appellation', en: 'Appellation' },
+      origine: { fr: 'Pays / région d’origine', de: 'Herkunftsland / -region', en: 'Country / region of origin' },
+      cepages: { fr: 'Cépage(s)', de: 'Rebsorte(n)', en: 'Grape variety(ies)' },
+      millesime: { fr: 'Millésime', de: 'Jahrgang', en: 'Vintage' },
+      contenance: { fr: 'Contenance', de: 'Füllmenge', en: 'Volume' },
+      service: { fr: 'Température de service', de: 'Serviertemperatur', en: 'Serving temperature' },
+      degre: { fr: 'Degré d’alcool', de: 'Alkoholgehalt', en: 'Alcohol content' },
+      allergenes: { fr: 'Allergènes', de: 'Allergene', en: 'Allergens' },
+      elevage: { fr: 'Vinification & élevage', de: 'Vinifikation & Ausbau', en: 'Winemaking & ageing' },
+      garde: { fr: 'Potentiel de garde', de: 'Lagerpotenzial', en: 'Cellaring potential' },
+      enBref: { fr: 'En bref', de: 'Auf einen Blick', en: 'At a glance' },
+      degustation: { fr: 'Description organoleptique', de: 'Organoleptische Beschreibung', en: 'Tasting notes' },
+      robe: { fr: 'Robe', de: 'Farbe', en: 'Appearance' },
+      nez: { fr: 'Nez', de: 'Nase', en: 'Nose' },
+      bouche: { fr: 'Bouche', de: 'Gaumen', en: 'Palate' },
+      accords: { fr: 'Accords mets-vins', de: 'Speisenempfehlungen', en: 'Food pairings' },
+      medailles: { fr: 'Médailles & distinctions', de: 'Auszeichnungen', en: 'Awards & distinctions' },
+      commander: { fr: 'Commander cette cuvée', de: 'Diesen Wein bestellen', en: 'Order this wine' },
+      seoDescPrefix: { fr: 'Fiche détaillée', de: 'Detailblatt', en: 'Detailed sheet' },
     },
   },
 
@@ -565,6 +864,22 @@ export const domaine = {
       // Badge discret signalant que les produits affichés sont des exemples
       modeDemo: { fr: 'Produits de démonstration', de: 'Demo-Produkte', en: 'Demo products' },
       chargement: { fr: 'Chargement de la boutique…', de: 'Shop wird geladen…', en: 'Loading the shop…' },
+      // Conformité — affichée dans le tunnel de commande (panier).
+      majeurLabel: {
+        fr: 'Je certifie avoir l’âge légal pour acheter de l’alcool (18 ans ou plus).',
+        de: 'Ich bestätige, dass ich das gesetzliche Alter für den Kauf von Alkohol habe (18 Jahre oder älter).',
+        en: 'I certify that I am of legal age to purchase alcohol (18 or older).',
+      },
+      majeurRequis: {
+        fr: 'Veuillez certifier que vous êtes majeur(e) pour passer commande.',
+        de: 'Bitte bestätigen Sie, dass Sie volljährig sind, um zu bestellen.',
+        en: 'Please certify that you are of legal age to place an order.',
+      },
+      livraisonNote: {
+        fr: 'Livraison interdite aux mineurs. L’adresse de livraison et le nom du destinataire sont renseignés séparément à l’étape de paiement sécurisé (préparation des documents douaniers).',
+        de: 'Lieferung an Minderjährige verboten. Lieferadresse und Name des Empfängers werden im sicheren Bezahlschritt getrennt erfasst (Vorbereitung der Zolldokumente).',
+        en: 'Delivery to minors prohibited. The delivery address and recipient name are entered separately at the secure checkout step (customs document preparation).',
+      },
     },
     // Produits de DÉMO — même forme que le modèle normalisé renvoyé par
     // src/lib/shopify.js, à deux nuances près : title/description/tag/alt sont
@@ -573,6 +888,7 @@ export const domaine = {
     produitsDemo: [
       {
         id: 'demo-riesling',
+        slug: 'riesling-grand-cru-schoenenbourg',
         variantId: null,
         available: true,
         tag: { fr: 'Riesling', de: 'Riesling', en: 'Riesling' },
@@ -598,6 +914,7 @@ export const domaine = {
       },
       {
         id: 'demo-gewurztraminer',
+        slug: 'gewurztraminer-vendanges-tardives',
         variantId: null,
         available: false, // en rupture → illustre le badge « Épuisé »
         tag: { fr: 'Gewurztraminer', de: 'Gewurztraminer', en: 'Gewurztraminer' },
@@ -623,6 +940,7 @@ export const domaine = {
       },
       {
         id: 'demo-pinot-noir',
+        slug: 'pinot-noir-cote-de-granit',
         variantId: null,
         available: true,
         tag: { fr: 'Pinot Noir', de: 'Pinot Noir', en: 'Pinot Noir' },
@@ -648,6 +966,7 @@ export const domaine = {
       },
       {
         id: 'demo-cremant',
+        slug: 'cremant-alsace-cuvee-joseph',
         variantId: null,
         available: true,
         tag: { fr: 'Crémant d’Alsace', de: 'Crémant d’Alsace', en: 'Crémant d’Alsace' },
@@ -867,6 +1186,63 @@ export const domaine = {
     { nom: 'Facebook', url: 'https://facebook.com' },
   ],
 
+  // ── Mentions légales obligatoires (vente d'alcool — France) ───────────────
+  // Réutilisées partout : footer, fiche produit, tunnel de commande. Centralisées
+  // ici pour rester cohérentes et faciles à adapter par client.
+  mentions: {
+    sante: {
+      fr: 'L’abus d’alcool est dangereux pour la santé.',
+      de: 'Alkoholmissbrauch ist gesundheitsschädlich.',
+      en: 'Excessive drinking is harmful to health.',
+    },
+    moderation: {
+      fr: 'À consommer avec modération.',
+      de: 'In Maßen genießen.',
+      en: 'Please drink responsibly.',
+    },
+    mineurs: {
+      fr: 'La vente d’alcool aux mineurs de moins de 18 ans est interdite.',
+      de: 'Der Verkauf von Alkohol an Minderjährige unter 18 Jahren ist verboten.',
+      en: 'The sale of alcohol to minors under 18 is prohibited.',
+    },
+    accise: {
+      fr: 'Produit soumis à un droit d’accise.',
+      de: 'Verbrauchsteuerpflichtiges Erzeugnis.',
+      en: 'Product subject to excise duty.',
+    },
+  },
+
+  // ── Vérification d'âge (modal d'accueil) ─────────────────────────────────
+  // Affiché à la première visite ; le choix est mémorisé (localStorage) pour ne
+  // plus réapparaître. Contenu multilingue résolu via t().
+  ageGate: {
+    eyebrow: { fr: 'Bienvenue', de: 'Willkommen', en: 'Welcome' },
+    titre: {
+      fr: 'Avez-vous l’âge légal pour consommer de l’alcool ?',
+      de: 'Haben Sie das gesetzliche Alter zum Alkoholkonsum?',
+      en: 'Are you of legal drinking age?',
+    },
+    texte: {
+      fr: 'Pour accéder au site du Domaine Vogel-Stein, vous devez avoir 18 ans ou plus.',
+      de: 'Um die Website des Weinguts Vogel-Stein zu besuchen, müssen Sie 18 Jahre oder älter sein.',
+      en: 'To enter the Domaine Vogel-Stein website, you must be 18 or older.',
+    },
+    oui: { fr: 'J’ai 18 ans ou plus', de: 'Ich bin 18 oder älter', en: 'I am 18 or older' },
+    non: { fr: 'J’ai moins de 18 ans', de: 'Ich bin unter 18', en: 'I am under 18' },
+    refusTitre: { fr: 'Accès non autorisé', de: 'Kein Zugang', en: 'Access not allowed' },
+    refusTexte: {
+      fr: 'Vous devez avoir l’âge légal pour consommer de l’alcool pour accéder à ce site. Revenez nous voir plus tard.',
+      de: 'Sie müssen das gesetzliche Mindestalter für Alkoholkonsum erreicht haben, um diese Website zu besuchen. Schauen Sie später wieder vorbei.',
+      en: 'You must be of legal drinking age to enter this website. Please come back another time.',
+    },
+    retour: { fr: 'Revenir en arrière', de: 'Zurück', en: 'Go back' },
+    rappel: {
+      fr: 'L’abus d’alcool est dangereux pour la santé. À consommer avec modération.',
+      de: 'Alkoholmissbrauch ist gesundheitsschädlich. In Maßen genießen.',
+      en: 'Excessive drinking is harmful to health. Please drink responsibly.',
+    },
+  },
+
   // ── Footer ───────────────────────────────────────────────────────────────
   footer: {
     accroche: {
@@ -876,6 +1252,7 @@ export const domaine = {
     },
     legalLinks: [
       { label: { fr: 'Mentions légales', de: 'Impressum', en: 'Legal notice' }, to: '/mentions-legales' },
+      { label: { fr: 'CGV', de: 'AGB', en: 'Terms of sale' }, to: '/cgv' },
       { label: { fr: 'Confidentialité', de: 'Datenschutz', en: 'Privacy' }, to: '/confidentialite' },
     ],
     credit: {
@@ -889,6 +1266,60 @@ export const domaine = {
   // Contenu volontairement générique (démo). Chaque page = liste de blocs
   // { titre, corps:[paragraphes] }.
   legal: {
+    '/cgv': {
+      titre: { fr: 'Conditions générales de vente', de: 'Allgemeine Geschäftsbedingungen', en: 'Terms & Conditions of Sale' },
+      maj: { fr: 'Dernière mise à jour : janvier 2026', de: 'Letzte Aktualisierung: Januar 2026', en: 'Last updated: January 2026' },
+      blocs: [
+        {
+          titre: { fr: 'Objet', de: 'Gegenstand', en: 'Purpose' },
+          corps: {
+            fr: ['Les présentes conditions régissent la vente en ligne des vins du Domaine Vogel-Stein. Toute commande implique l’acceptation pleine et entière des présentes CGV.'],
+            de: ['Diese Bedingungen regeln den Online-Verkauf der Weine des Weinguts Vogel-Stein. Jede Bestellung setzt die vollständige Annahme dieser AGB voraus.'],
+            en: ['These terms govern the online sale of Domaine Vogel-Stein wines. Any order implies full and unreserved acceptance of these terms.'],
+          },
+        },
+        {
+          titre: { fr: 'Interdiction de vente aux mineurs', de: 'Verkaufsverbot an Minderjährige', en: 'Prohibition of sale to minors' },
+          corps: {
+            fr: ['La vente de boissons alcooliques à des mineurs de moins de 18 ans est interdite (art. L.3342-1 du Code de la santé publique). En passant commande, l’acheteur certifie avoir l’âge légal requis. Une pièce justificative pourra être demandée à la livraison.', 'L’abus d’alcool est dangereux pour la santé. À consommer avec modération.'],
+            de: ['Der Verkauf alkoholischer Getränke an Minderjährige unter 18 Jahren ist verboten. Mit der Bestellung bestätigt der Käufer, das gesetzliche Mindestalter erreicht zu haben. Bei der Lieferung kann ein Ausweis verlangt werden.', 'Alkoholmissbrauch ist gesundheitsschädlich. In Maßen genießen.'],
+            en: ['The sale of alcoholic beverages to minors under 18 is prohibited. By placing an order, the buyer certifies being of legal age. Proof of age may be required upon delivery.', 'Excessive drinking is harmful to health. Please drink responsibly.'],
+          },
+        },
+        {
+          titre: { fr: 'Prix et droit d’accise', de: 'Preise und Verbrauchsteuer', en: 'Prices and excise duty' },
+          corps: {
+            fr: ['Les prix sont indiqués en euros, toutes taxes comprises. Les vins sont des produits soumis à un droit d’accise. Les frais de port sont calculés et affichés avant la validation finale du paiement.'],
+            de: ['Die Preise verstehen sich in Euro inklusive aller Steuern. Weine sind verbrauchsteuerpflichtige Erzeugnisse. Die Versandkosten werden vor der endgültigen Bestätigung der Zahlung berechnet und angezeigt.'],
+            en: ['Prices are shown in euros, all taxes included. Wines are products subject to excise duty. Shipping costs are calculated and displayed before final payment confirmation.'],
+          },
+        },
+        {
+          titre: { fr: 'Commande et paiement', de: 'Bestellung und Zahlung', en: 'Order and payment' },
+          corps: {
+            fr: ['La commande est validée après confirmation du paiement, opéré via un prestataire sécurisé. Un récapitulatif est adressé par e-mail.'],
+            de: ['Die Bestellung wird nach Bestätigung der Zahlung über einen sicheren Dienstleister wirksam. Eine Zusammenfassung wird per E-Mail zugesandt.'],
+            en: ['The order is confirmed once payment, processed by a secure provider, is validated. A summary is sent by email.'],
+          },
+        },
+        {
+          titre: { fr: 'Livraison et restrictions', de: 'Lieferung und Einschränkungen', en: 'Delivery and restrictions' },
+          corps: {
+            fr: ['La livraison s’effectue à l’adresse indiquée par l’acheteur ; le nom du destinataire peut être distinct de celui de l’acheteur (les informations nécessaires aux documents douaniers sont alors collectées). La livraison ne peut être remise à une personne mineure. Certaines destinations peuvent être exclues en raison de la réglementation locale sur l’importation d’alcool.'],
+            de: ['Die Lieferung erfolgt an die vom Käufer angegebene Adresse; der Name des Empfängers kann von dem des Käufers abweichen (die für Zolldokumente erforderlichen Angaben werden dann erhoben). Die Lieferung darf nicht an Minderjährige übergeben werden. Bestimmte Ziele können aufgrund lokaler Vorschriften zur Alkoholeinfuhr ausgeschlossen sein.'],
+            en: ['Delivery is made to the address provided by the buyer; the recipient’s name may differ from the buyer’s (information required for customs documents is then collected). Delivery may not be handed to a minor. Some destinations may be excluded due to local regulations on alcohol import.'],
+          },
+        },
+        {
+          titre: { fr: 'Droit de rétractation', de: 'Widerrufsrecht', en: 'Right of withdrawal' },
+          corps: {
+            fr: ['Conformément au Code de la consommation, l’acheteur dispose d’un délai de quatorze jours pour exercer son droit de rétractation, sauf exceptions légales. Les produits doivent être retournés intacts, dans leur emballage d’origine. Les frais de retour sont à la charge de l’acheteur.'],
+            de: ['Gemäß dem Verbraucherrecht hat der Käufer eine Frist von vierzehn Tagen, um sein Widerrufsrecht auszuüben, vorbehaltlich gesetzlicher Ausnahmen. Die Produkte müssen unversehrt in ihrer Originalverpackung zurückgesandt werden. Die Rücksendekosten trägt der Käufer.'],
+            en: ['In accordance with consumer law, the buyer has fourteen days to exercise the right of withdrawal, subject to legal exceptions. Products must be returned intact, in their original packaging. Return costs are borne by the buyer.'],
+          },
+        },
+      ],
+    },
     '/mentions-legales': {
       titre: { fr: 'Mentions légales', de: 'Impressum', en: 'Legal notice' },
       maj: { fr: 'Dernière mise à jour : janvier 2026', de: 'Letzte Aktualisierung: Januar 2026', en: 'Last updated: January 2026' },
@@ -950,6 +1381,23 @@ export const domaine = {
       ],
     },
   },
+}
+
+// ── Accès aux cuvées par slug (fiche produit /nos-cuvees/:slug) ──────────────
+// Index slug → cuvée, construit une seule fois. Sert à la page de détail ET au
+// lien « Voir la fiche » des cartes boutique (qui pointent vers la même fiche).
+const cuveesBySlug = Object.fromEntries(
+  domaine.cuvees.liste.filter((c) => c.slug).map((c) => [c.slug, c]),
+)
+
+/** Renvoie la cuvée correspondant au slug, ou null si inconnue. */
+export function getCuvee(slug) {
+  return (slug && cuveesBySlug[slug]) || null
+}
+
+/** Vrai si une fiche existe pour ce slug (utilisé par les cartes boutique). */
+export function hasCuvee(slug) {
+  return Boolean(slug && cuveesBySlug[slug])
 }
 
 // Libellés du sélecteur de langue (affichés tels quels)

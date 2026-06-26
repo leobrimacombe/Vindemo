@@ -3,6 +3,7 @@ import Layout from './components/Layout.jsx'
 import Home from './pages/Home.jsx'
 import LeDomaine from './pages/LeDomaine.jsx'
 import NosCuvees from './pages/NosCuvees.jsx'
+import CuveeDetail from './pages/CuveeDetail.jsx'
 import Boutique from './pages/Boutique.jsx'
 import Oenotourisme from './pages/Oenotourisme.jsx'
 import Contact from './pages/Contact.jsx'
@@ -20,11 +21,14 @@ export default function App() {
         <Route index element={<Home />} />
         <Route path="le-domaine" element={<LeDomaine />} />
         <Route path="nos-cuvees" element={<NosCuvees />} />
+        {/* Fiche produit : une page template par vin, paramétrée par le slug */}
+        <Route path="nos-cuvees/:slug" element={<CuveeDetail />} />
         <Route path="boutique" element={<Boutique />} />
         <Route path="oenotourisme" element={<Oenotourisme />} />
         <Route path="contact" element={<Contact />} />
         {/* Pages légales : une même vue paramétrée par la route */}
         <Route path="mentions-legales" element={<Legal route="/mentions-legales" />} />
+        <Route path="cgv" element={<Legal route="/cgv" />} />
         <Route path="confidentialite" element={<Legal route="/confidentialite" />} />
         <Route path="*" element={<NotFound />} />
       </Route>

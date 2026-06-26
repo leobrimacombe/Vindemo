@@ -55,10 +55,11 @@ export default function Footer() {
           </nav>
         </div>
 
-        {/* Mention sanitaire — obligatoire en France */}
-        <p className="mt-12 border-t border-cream-100/10 pt-8 text-center font-sans text-xs uppercase tracking-widest text-copper-light/80">
-          {t(footer.accroche)}
-        </p>
+        {/* Mentions obligatoires en France (santé + modération + mineurs) */}
+        <div className="mt-12 space-y-2 border-t border-cream-100/10 pt-8 text-center font-sans text-xs uppercase tracking-widest text-copper-light/80">
+          <p>{t(footer.accroche)}</p>
+          <p className="text-cream-100/45">{t(domaine.mentions.mineurs)}</p>
+        </div>
 
         {/* Bas de page */}
         <div className="mt-8 flex flex-col items-center gap-4 text-center text-xs text-cream-100/45 sm:flex-row sm:justify-between sm:text-left">

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useLang } from '../../i18n/LanguageContext.jsx'
 import { domaine } from '../../data/domaine.js'
@@ -24,6 +24,9 @@ export default function CartDrawer() {
   const panelRef = useRef(null)
   const closeBtnRef = useRef(null)
   const lastFocused = useRef(null)
+
+  // Conformité : certification de majorité obligatoire avant de commander.
+  const [majeur, setMajeur] = useState(false)
 
   // Scroll du body bloqué + `inert` hors-écran (même esprit que le menu mobile)
   useEffect(() => {
@@ -186,6 +189,26 @@ export default function CartDrawer() {
             </div>
             <p className="mt-1 font-sans text-xs text-ink/45">{t(ui.taxesNote)}</p>
 
+            {/* Mentions légales obligatoires dans le tunnel de commande */}
+            <p className="mt-4 font-sans text-xs leading-relaxed text-ink/55">
+              {t(domaine.mentions.sante)} {t(domaine.mentions.moderation)}{' '}
+              {t(domaine.mentions.mineurs)} {t(domaine.mentions.accise)}
+            </p>
+            <p className="mt-2 font-sans text-[0.7rem] leading-relaxed text-ink/40">
+              {t(ui.livraisonNote)}
+            </p>
+
+            {/* Certification de majorité — requise pour activer la commande */}
+            <label className="mt-4 flex cursor-pointer items-start gap-3">
+              <input
+                type="checkbox"
+                checked={majeur}
+                onChange={(e) => setMajeur(e.target.checked)}
+                className="mt-0.5 h-4 w-4 flex-shrink-0 accent-bordeaux"
+              />
+              <span className="font-sans text-xs leading-relaxed text-ink/70">{t(ui.majeurLabel)}</span>
+            </label>
+
             {/* Messages de checkout */}
             {checkoutStatus === 'demo' && (
               <p className="mt-4 rounded-lg border border-copper/30 bg-copper/5 px-4 py-3 font-sans text-sm leading-relaxed text-copper">
@@ -201,11 +224,17 @@ export default function CartDrawer() {
             <button
               type="button"
               onClick={checkout}
-              disabled={checkoutStatus === 'loading'}
-              className="btn-primary mt-4 w-full disabled:cursor-wait disabled:opacity-70"
+              disabled={checkoutStatus === 'loading' || !majeur}
+              aria-describedby="cart-majeur-hint"
+              className="btn-primary mt-4 w-full disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:shadow-none"
             >
               {t(checkoutStatus === 'loading' ? ui.redirection : ui.commander)}
             </button>
+            {!majeur && (
+              <p id="cart-majeur-hint" className="mt-2 text-center font-sans text-xs text-ink/45">
+                {t(ui.majeurRequis)}
+              </p>
+            )}
           </div>
         )}
       </aside>
