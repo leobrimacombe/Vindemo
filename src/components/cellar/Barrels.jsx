@@ -75,6 +75,16 @@ export default function Barrels() {
   // Géométrie d'un cerclage (torus fin)
   const hoopGeom = useMemo(() => new THREE.TorusGeometry(1, 0.035, 8, 24), [])
 
+  // Géométrie des fonds de fût (LatheGeometry ne ferme pas les extrémités)
+  const capGeom = useMemo(() => new THREE.CircleGeometry(endR, 20), [])
+  const capDefs = useMemo(
+    () => [
+      { offset: barrelLen / 2, rotY: Math.PI / 2 },
+      { offset: -barrelLen / 2, rotY: -Math.PI / 2 },
+    ],
+    [],
+  )
+
   // Cerclages le long de l'axe : offset (en X après rotation) + rayon ajusté
   // au galbe du fût à cet endroit (légèrement débordant pour bien se voir).
   const hoopDefs = useMemo(() => {
@@ -93,6 +103,7 @@ export default function Barrels() {
 
   const bodyRef = useRef()
   const hoopRefs = [useRef(), useRef(), useRef()]
+  const capRefs = [useRef(), useRef()]
 
   useLayoutEffect(() => {
     const dummy = new THREE.Object3D()
@@ -124,7 +135,19 @@ export default function Barrels() {
       mesh.instanceMatrix.needsUpdate = true
       dummy.scale.set(1, 1, 1)
     })
-  }, [layout, hoopDefs])
+
+    // Fonds : deux disques par fût, un à chaque extrémité de l'axe (X)
+    capDefs.forEach((def, c) => {
+      const mesh = capRefs[c].current
+      layout.forEach((it, i) => {
+        dummy.position.set(it.x + def.offset, it.y, it.z)
+        dummy.rotation.set(0, def.rotY, 0)
+        dummy.updateMatrix()
+        mesh.setMatrixAt(i, dummy.matrix)
+      })
+      mesh.instanceMatrix.needsUpdate = true
+    })
+  }, [layout, hoopDefs, capDefs])
 
   return (
     <group>
@@ -137,6 +160,13 @@ export default function Barrels() {
       {hoopDefs.map((_, h) => (
         <instancedMesh key={h} ref={hoopRefs[h]} args={[hoopGeom, undefined, layout.length]}>
           <meshStandardMaterial color="#3a2f28" roughness={0.5} metalness={0.7} />
+        </instancedMesh>
+      ))}
+
+      {/* Fonds des fûts — ferment l'avant et l'arrière */}
+      {capDefs.map((_, c) => (
+        <instancedMesh key={c} ref={capRefs[c]} args={[capGeom, undefined, layout.length]}>
+          <meshStandardMaterial color="#6b4023" roughness={0.8} metalness={0.05} side={THREE.DoubleSide} />
         </instancedMesh>
       ))}
     </group>

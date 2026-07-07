@@ -29,7 +29,7 @@ export default function Hero() {
       {/* Contenu */}
       <div className="section-shell relative z-10 pb-24 pt-32">
         <p className="eyebrow mb-6 animate-fade-in text-copper-light opacity-0 [animation-delay:200ms]">
-          {village} — {t(region)}
+          {village}, {t(region)}
         </p>
 
         <h1 className="max-w-4xl text-balance font-serif text-[clamp(3rem,9vw,7rem)] font-medium leading-[0.95] text-cream-50">

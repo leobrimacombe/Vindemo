@@ -7,9 +7,9 @@ import CtaBand from '../components/CtaBand.jsx'
 // SEO de la page d'accueil (les autres pages tirent leur SEO de domaine.pages)
 const homeSeo = {
   title: {
-    fr: 'Domaine Vogel-Stein — Vins d’Alsace à Riquewihr',
-    de: 'Domaine Vogel-Stein — Elsässer Weine in Riquewihr',
-    en: 'Domaine Vogel-Stein — Wines of Alsace in Riquewihr',
+    fr: 'Domaine Vogel-Stein - Vins d’Alsace à Riquewihr',
+    de: 'Domaine Vogel-Stein - Elsässer Weine in Riquewihr',
+    en: 'Domaine Vogel-Stein - Wines of Alsace in Riquewihr',
   },
   description: {
     fr: 'Vignoble familial à Riquewihr depuis quatre générations. Dégustations, œnotourisme et grands vins d’Alsace : Riesling, Gewurztraminer, Pinot Gris, Crémant.',

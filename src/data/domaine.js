@@ -84,17 +84,17 @@ export const domaine = {
       fr: [
         'Tout commence en 1922, lorsque Joseph Vogel achète quelques arpents de granit et de marne sur les hauteurs de Riquewihr. Il n’a alors qu’une certitude : ce coteau, exposé plein sud et balayé par l’air sec des Vosges, est fait pour le Riesling.',
         'Quatre générations plus tard, la famille cultive toujours ces mêmes parcelles, à la main, au rythme des saisons. Nous avons appris à écouter le terroir plutôt qu’à le contraindre : enherbement, vendanges manuelles, levures indigènes et longs élevages sur lies.',
-        'Aujourd’hui, c’est Camille Vogel-Stein qui veille sur le chai. Elle perpétue le geste de ses aînés tout en y glissant sa propre signature — des vins droits, lumineux, qui racontent fidèlement leur année.',
+        'Aujourd’hui, c’est Camille Vogel-Stein qui veille sur le chai. Elle perpétue le geste de ses aînés tout en y glissant sa propre signature. Des vins droits, lumineux, qui racontent fidèlement leur année.',
       ],
       de: [
         'Alles beginnt 1922, als Joseph Vogel einige Morgen Granit und Mergel auf den Höhen von Riquewihr erwirbt. Er hat nur eine Gewissheit: Dieser nach Süden ausgerichtete, vom trockenen Wind der Vogesen umwehte Hang ist für den Riesling geschaffen.',
-        'Vier Generationen später bewirtschaftet die Familie noch immer dieselben Parzellen — von Hand, im Rhythmus der Jahreszeiten. Wir haben gelernt, dem Terroir zuzuhören, statt es zu zwingen: Begrünung, Handlese, einheimische Hefen und lange Reifung auf der Feinhefe.',
-        'Heute wacht Camille Vogel-Stein über den Keller. Sie führt die Geste ihrer Vorfahren fort und fügt zugleich ihre eigene Handschrift hinzu — geradlinige, leuchtende Weine, die ihren Jahrgang getreu erzählen.',
+        'Vier Generationen später bewirtschaftet die Familie noch immer dieselben Parzellen, von Hand, im Rhythmus der Jahreszeiten. Wir haben gelernt, dem Terroir zuzuhören, statt es zu zwingen: Begrünung, Handlese, einheimische Hefen und lange Reifung auf der Feinhefe.',
+        'Heute wacht Camille Vogel-Stein über den Keller. Sie führt die Geste ihrer Vorfahren fort und fügt zugleich ihre eigene Handschrift hinzu. Geradlinige, leuchtende Weine, die ihren Jahrgang getreu erzählen.',
       ],
       en: [
         'It all began in 1922, when Joseph Vogel bought a few acres of granite and marl on the heights above Riquewihr. He had but one conviction: this south-facing slope, swept by the dry air of the Vosges, was made for Riesling.',
         'Four generations on, the family still tends those same parcels by hand, to the rhythm of the seasons. We have learned to listen to the terroir rather than constrain it: cover crops, hand harvesting, indigenous yeasts and long ageing on the lees.',
-        'Today it is Camille Vogel-Stein who watches over the cellar. She carries on the gestures of her forebears while adding her own signature — precise, luminous wines that faithfully tell the story of their vintage.',
+        'Today it is Camille Vogel-Stein who watches over the cellar. She carries on the gestures of her forebears while adding her own signature. Precise, luminous wines that faithfully tell the story of their vintage.',
       ],
     },
     // Photo du vigneron / de la vigneronne
@@ -203,7 +203,7 @@ export const domaine = {
           {
             concours: 'Decanter World Wine Awards',
             annee: '2022',
-            recompense: { fr: '95/100 — Platine', de: '95/100 — Platin', en: '95/100 — Platinum' },
+            recompense: { fr: '95/100 - Platine', de: '95/100 - Platin', en: '95/100 - Platinum' },
           },
         ],
       },
@@ -539,9 +539,9 @@ export const domaine = {
       en: 'Step into the cellar',
     },
     intro: {
-      fr: 'Nos vins reposent à l’abri de la lumière, dans la fraîcheur des caves voûtées. Tournez autour des fûts de chêne — comme si vous y étiez.',
-      de: 'Unsere Weine ruhen im Dunkeln, in der Kühle der gewölbten Keller. Drehen Sie sich um die Eichenfässer — als wären Sie dort.',
-      en: 'Our wines rest away from the light, in the cool of the vaulted cellars. Turn around the oak barrels — as if you were there.',
+      fr: 'Nos vins reposent à l’abri de la lumière, dans la fraîcheur des caves voûtées. Tournez autour des fûts de chêne, comme si vous y étiez.',
+      de: 'Unsere Weine ruhen im Dunkeln, in der Kühle der gewölbten Keller. Drehen Sie sich um die Eichenfässer, als wären Sie dort.',
+      en: 'Our wines rest away from the light, in the cool of the vaulted cellars. Turn around the oak barrels, as if you were there.',
     },
     controlsHint: {
       fr: 'Cliquez-glissez pour explorer · molette pour zoomer',
@@ -700,9 +700,9 @@ export const domaine = {
         en: 'Terraced vineyard in golden evening light',
       },
       seoTitle: {
-        fr: 'Le domaine — Domaine Vogel-Stein',
-        de: 'Das Weingut — Domaine Vogel-Stein',
-        en: 'The estate — Domaine Vogel-Stein',
+        fr: 'Le domaine - Domaine Vogel-Stein',
+        de: 'Das Weingut - Domaine Vogel-Stein',
+        en: 'The estate - Domaine Vogel-Stein',
       },
       seoDesc: {
         fr: 'Histoire, terroir et savoir-faire du Domaine Vogel-Stein, vignoble familial de Riquewihr depuis 1922.',
@@ -726,9 +726,9 @@ export const domaine = {
         en: 'Alsatian wine bottles lined up in the dim cellar',
       },
       seoTitle: {
-        fr: 'Nos cuvées — Domaine Vogel-Stein',
-        de: 'Unsere Weine — Domaine Vogel-Stein',
-        en: 'Our wines — Domaine Vogel-Stein',
+        fr: 'Nos cuvées - Domaine Vogel-Stein',
+        de: 'Unsere Weine - Domaine Vogel-Stein',
+        en: 'Our wines - Domaine Vogel-Stein',
       },
       seoDesc: {
         fr: 'Riesling Grand Cru, Gewurztraminer, Pinot Gris, Pinot Noir et Crémant d’Alsace : découvrez nos cuvées et leurs accords.',
@@ -752,9 +752,9 @@ export const domaine = {
         en: 'Glasses of white wine raised during a convivial tasting',
       },
       seoTitle: {
-        fr: 'Visites & dégustations — Domaine Vogel-Stein',
-        de: 'Besuche & Verkostungen — Domaine Vogel-Stein',
-        en: 'Visits & tastings — Domaine Vogel-Stein',
+        fr: 'Visites & dégustations - Domaine Vogel-Stein',
+        de: 'Besuche & Verkostungen - Domaine Vogel-Stein',
+        en: 'Visits & tastings - Domaine Vogel-Stein',
       },
       seoDesc: {
         fr: 'Réservez une dégustation au Domaine Vogel-Stein à Riquewihr : formules Découverte, Prestige et accord mets-vins.',
@@ -778,9 +778,9 @@ export const domaine = {
         en: 'Cobbled lane and half-timbered houses of Riquewihr',
       },
       seoTitle: {
-        fr: 'Accès & contact — Domaine Vogel-Stein',
-        de: 'Anfahrt & Kontakt — Domaine Vogel-Stein',
-        en: 'Visit & contact — Domaine Vogel-Stein',
+        fr: 'Accès & contact - Domaine Vogel-Stein',
+        de: 'Anfahrt & Kontakt - Domaine Vogel-Stein',
+        en: 'Visit & contact - Domaine Vogel-Stein',
       },
       seoDesc: {
         fr: 'Adresse, horaires et accès au caveau du Domaine Vogel-Stein, 12 rue du Général de Gaulle, 68340 Riquewihr.',
@@ -804,9 +804,9 @@ export const domaine = {
         en: 'Wine glasses lined up on a barrel for a tasting',
       },
       seoTitle: {
-        fr: 'Boutique — Domaine Vogel-Stein',
-        de: 'Shop — Domaine Vogel-Stein',
-        en: 'Shop — Domaine Vogel-Stein',
+        fr: 'Boutique - Domaine Vogel-Stein',
+        de: 'Shop - Domaine Vogel-Stein',
+        en: 'Shop - Domaine Vogel-Stein',
       },
       seoDesc: {
         fr: 'Commandez les vins du Domaine Vogel-Stein en ligne : Riesling, Gewurztraminer, Pinot Noir, Crémant d’Alsace. Livraison directe du domaine.',
@@ -1122,36 +1122,33 @@ export const domaine = {
     titre: { fr: 'Les visages du domaine', de: 'Die Gesichter des Weinguts', en: 'The faces of the estate' },
     membres: [
       {
-        nom: 'Camille Vogel-Stein',
-        role: { fr: 'Vigneronne · 4ᵉ génération', de: 'Winzerin · 4. Generation', en: 'Winemaker · 4th generation' },
-        photo:
-          'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80',
+        nom: 'Jean Vogel-Stein',
+        role: { fr: 'Gérant · Vigneron', de: 'Geschäftsführer · Winzer', en: 'Managing director · Winemaker' },
+        photo: '/images/jeanvogelstein.jpg',
         bio: {
-          fr: 'Formée à Beaune puis en Nouvelle-Zélande, elle a repris les rênes en 2014.',
-          de: 'Ausgebildet in Beaune und Neuseeland, übernahm sie 2014 die Leitung.',
-          en: 'Trained in Beaune and New Zealand, she took the reins in 2014.',
+          fr: 'Il dirige le domaine et veille sur les vignes au quotidien.',
+          de: 'Er leitet das Weingut und kümmert sich täglich um die Reben.',
+          en: 'He runs the estate and tends to the vines every day.',
         },
       },
       {
-        nom: 'Henri Vogel-Stein',
-        role: { fr: 'Maître de chai', de: 'Kellermeister', en: 'Cellar master' },
-        photo:
-          'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=700&q=80',
+        nom: 'Philippe Vogel-Stein',
+        role: { fr: 'Vigneron', de: 'Winzer', en: 'Winemaker' },
+        photo: '/images/philippevogelstein.jpg',
         bio: {
-          fr: 'Le père de Camille veille sur les élevages et les vieilles vignes depuis quarante ans.',
-          de: 'Camilles Vater wacht seit vierzig Jahren über Ausbau und alte Reben.',
-          en: 'Camille’s father has watched over ageing and old vines for forty years.',
+          fr: 'Frère de Jean, il partage la charge du travail à la vigne.',
+          de: 'Jeans Bruder, er teilt sich die Arbeit in den Weinbergen.',
+          en: 'Jean’s brother, he shares responsibility for the vineyard work.',
         },
       },
       {
-        nom: 'Léa Marchand',
-        role: { fr: 'Accueil & œnotourisme', de: 'Empfang & Weintourismus', en: 'Hospitality & wine tourism' },
-        photo:
-          'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=700&q=80',
+        nom: 'Édouard Marchand',
+        role: { fr: 'Accueil, œnotourisme & ventes', de: 'Empfang, Weintourismus & Verkauf', en: 'Hospitality, wine tourism & sales' },
+        photo: '/images/edouardmarchand.jpg',
         bio: {
-          fr: 'Elle imagine les dégustations et vous accueille au caveau, en trois langues.',
-          de: 'Sie gestaltet die Verkostungen und empfängt Sie im Weinkeller, in drei Sprachen.',
-          en: 'She designs the tastings and welcomes you at the cellar, in three languages.',
+          fr: 'Spécialiste de l’accueil, il imagine les dégustations et accompagne les ventes.',
+          de: 'Empfangsspezialist, er gestaltet die Verkostungen und begleitet den Verkauf.',
+          en: 'A hospitality specialist, he designs the tastings and supports sales.',
         },
       },
     ],
@@ -1256,9 +1253,9 @@ export const domaine = {
       { label: { fr: 'Confidentialité', de: 'Datenschutz', en: 'Privacy' }, to: '/confidentialite' },
     ],
     credit: {
-      fr: 'Site de démonstration — conçu pour les vignerons d’Alsace.',
-      de: 'Demo-Website — gestaltet für die Winzer des Elsass.',
-      en: 'Demonstration site — crafted for the winemakers of Alsace.',
+      fr: 'Site de démonstration - conçu pour les vignerons d’Alsace.',
+      de: 'Demo-Website - gestaltet für die Winzer des Elsass.',
+      en: 'Demonstration site - crafted for the winemakers of Alsace.',
     },
   },
 
