@@ -1253,9 +1253,9 @@ export const domaine = {
       { label: { fr: 'Confidentialité', de: 'Datenschutz', en: 'Privacy' }, to: '/confidentialite' },
     ],
     credit: {
-      fr: 'Site de démonstration - conçu pour les vignerons d’Alsace.',
-      de: 'Demo-Website - gestaltet für die Winzer des Elsass.',
-      en: 'Demonstration site - crafted for the winemakers of Alsace.',
+      fr: 'Site de démonstration conçu et réalisé par',
+      de: 'Demo-Website, gestaltet und entwickelt von',
+      en: 'Demonstration site designed and built by',
     },
   },
 
