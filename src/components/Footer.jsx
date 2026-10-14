@@ -4,7 +4,7 @@ import { domaine } from '../data/domaine.js'
 
 /**
  * Footer — discret : nom, mention sanitaire obligatoire, liens légaux,
- * réseaux et crédit.
+ * réseaux et crédit (lien vers llweb.fr).
  */
 export default function Footer() {
   const { t } = useLang()
@@ -64,7 +64,16 @@ export default function Footer() {
         {/* Bas de page */}
         <div className="mt-8 flex flex-col items-center gap-4 text-center text-xs text-cream-100/45 sm:flex-row sm:justify-between sm:text-left">
           <p>
-            © {year} {nom}. {t(footer.credit)}
+            © {year} {nom}. {t(footer.credit)}{' '}
+            <a
+              href="https://llweb.fr/"
+              target="_blank"
+              rel="noopener"
+              className="underline underline-offset-2 transition-colors hover:text-cream-50"
+            >
+              LLWeb
+            </a>
+            .
           </p>
           <nav className="flex gap-5" aria-label="Liens légaux">
             {footer.legalLinks.map((l, i) => (
